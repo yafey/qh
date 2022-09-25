@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/qh/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/qh/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/qh/images/favicons/blue.big.Y.ico">
+  <link rel="mask-icon" href="/qh/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/qh/css/main.css">
+
+
+<link rel="stylesheet" href="/qh/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yafey.github.io","root":"/qh/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Putty 本无树，MinGW 亦非台">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Y.a.F.e.Y Blog">
+<meta property="og:url" content="https://yafey.github.io/qh/index.html">
+<meta property="og:site_name" content="Y.a.F.e.Y Blog">
+<meta property="og:description" content="Putty 本无树，MinGW 亦非台">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="YaFey">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://yafey.github.io/qh/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Y.a.F.e.Y Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/qh/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Y.a.F.e.Y Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/qh/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/qh/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/qh/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/qh/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/qh/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yafey.github.io/qh/2022/09/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/qh/images/avatar.gif">
+      <meta itemprop="name" content="YaFey">
+      <meta itemprop="description" content="Putty 本无树，MinGW 亦非台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Y.a.F.e.Y Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/qh/2022/09/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-25 22:49:26" itemprop="dateCreated datePublished" datetime="2022-09-25T22:49:26+08:00">2022-09-25</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>367</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yafey.github.io/qh/2022/09/hexo-admin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/qh/images/avatar.gif">
+      <meta itemprop="name" content="YaFey">
+      <meta itemprop="description" content="Putty 本无树，MinGW 亦非台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Y.a.F.e.Y Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/qh/2022/09/hexo-admin/" class="post-title-link" itemprop="url">Hexo-Admin</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-24 00:10:24" itemprop="dateCreated datePublished" datetime="2022-09-24T00:10:24+08:00">2022-09-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-25 22:49:21" itemprop="dateModified" datetime="2022-09-25T22:49:21+08:00">2022-09-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/qh/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>内置 <code>Hexo-admin</code> 的镜像。</p>
+<blockquote>
+<p>当然还有别的玩法，通过 Github Action 自动发布到 Github Page 仓库。也就是说每当你写完博客直接提交到源仓库即可自动触发构建。这个留待以后再研究。</p>
+</blockquote>
+<p><strong>什么是 hexo-admin ?</strong></p>
+<blockquote>
+<p>hexo-admin 是一个 Hexo 博客引擎的管理用户界面插件，能实现在线管理 hexo 博客。</p>
+</blockquote>
+<h1 id="安装及优化-laosu-hexo-admin"><a href="#安装及优化-laosu-hexo-admin" class="headerlink" title="安装及优化[^laosu-hexo-admin]"></a>安装及优化[^laosu-hexo-admin]</h1><p>在群晖上以 Docker 方式安装。</p>
+<h2 id="编写-Dockerfile"><a href="#编写-Dockerfile" class="headerlink" title="编写 Dockerfile"></a>编写 Dockerfile</h2><blockquote>
+<p>基于 <a target="_blank" rel="noopener" href="https://github.com/spurin/docker-hexo">spurin&#x2F;docker-hexo</a> 。</p>
+<blockquote>
+<p>基于 node:13-slim ( node:14 有问题，See <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/4275">Hexo 4275</a> )</p>
+</blockquote>
+</blockquote>
+<p>在群晖的 <code>docker</code> 目录中新建 <code>hexo-with-admin</code>  目录，然后 <code>SSH</code> 客户端登录到群晖 ，执行下面的命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入 hexo-with-admin 目录</span></span><br><span class="line">cd hexo-with-admin/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建空的 Dockerfile 文件</span></span><br><span class="line">touch Dockerfile</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">编辑 Dockerfile 文件</span></span><br><span class="line">vi Dockerfile</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>Dockerfile</code> 中写入下面的内容并保存</p>
+<blockquote>
+<ol>
+<li><p>基于 node:13-slim ( node:14 有问题，See <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/4275">Hexo 4275</a> )</p>
+</li>
+<li><p>Dockerfile 中添加 淘宝源。[^npm-registry] </p>
+<p><code>npm config set registry=http://registry.npm.taobao.org/ </code></p>
+<ul>
+<li><p>Dockerfile 中的写法为：  <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a63808777697">Docker 入门 (12) dockerfile 部署nodejs项目</a></p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定下载依赖淘宝镜像 , 学过前端都懂吧~</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>git clone Next 主题。（个人偏向于 不使用 npm nodemoudle 的方式  <del><code>npm install hexo-theme-next</code></del>。）</p>
+<p><del>社区维护的版本：<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">NexT v6 and v7</a> 🚩</del> ， 使用 自己改过的版本 ： <code>yafey/hexo-theme-next</code></p>
+<blockquote>
+<p>原作者已停止维护： <del><a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></del> 本项目已停止维护。⚠️  </p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo</span><br><span class="line">$ git <span class="built_in">clone</span> -b yafey_config https://github.com/yafey/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><del>清楚缓存并检测文件变动。<code>hexo clean &amp;&amp; hexo generate -w &amp; &amp;&amp; </code> (<code>hexo g -w</code> 后台运行)</del>[^Linux后台运行的几种方式] 。  <strong><code>hexo g -w</code>好像是线程阻塞的。</strong></p>
+</li>
+<li><p>设置为中国时区。<code>ENV TZ=CST-8</code></p>
+</li>
+</ol>
+</blockquote>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node:<span class="number">13</span>-slim</span><br><span class="line"></span><br><span class="line"><span class="keyword">MAINTAINER</span> James Spurin &lt;james@spurin.com&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># set as China time zone , otherwise , default UTC timezone will 8 hours after CST.</span></span><br><span class="line"><span class="keyword">ENV</span> TIME_ZONE=Asia/Shanghai </span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> <span class="built_in">ln</span> -snf /usr/share/zoneinfo/<span class="variable">$TIME_ZONE</span> /etc/localtime &amp;&amp; <span class="built_in">echo</span> <span class="variable">$TIME_ZONE</span> &gt; /etc/timezone</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set the server port as an environmental</span></span><br><span class="line"><span class="keyword">ENV</span> HEXO_SERVER_PORT=<span class="number">4000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set the git username and email</span></span><br><span class="line"><span class="keyword">ENV</span> GIT_USER=<span class="string">&quot;Joe Bloggs&quot;</span></span><br><span class="line"><span class="keyword">ENV</span> GIT_EMAIL=<span class="string">&quot;joe@bloggs.com&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定 npm 使用 淘宝镜像</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install requirements</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> \</span></span><br><span class="line"><span class="language-bash"> apt-get update &amp;&amp; \</span></span><br><span class="line"><span class="language-bash"> apt-get install git -y &amp;&amp; \</span></span><br><span class="line"><span class="language-bash"> npm install -g hexo-cli</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set workdir</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /app</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Expose Server Port</span></span><br><span class="line"><span class="keyword">EXPOSE</span> $&#123;HEXO_SERVER_PORT&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Build a base server and configuration if it doesnt exist, then start</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">if</span> [ <span class="string">&quot;<span class="subst">$(ls -A /app)</span>&quot;</span> ]; <span class="keyword">then</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** App directory exists and has content, continuing *****&quot;</span>; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">else</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** App directory is empty, initialising with hexo and hexo-admin *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    hexo init &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    npm install &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    npm install --save hexo-admin; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">fi</span>; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">if</span> [ ! -f /app/requirements.txt ]; <span class="keyword">then</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** App directory contains no requirements.txt file, continuing *****&quot;</span>; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">else</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** App directory contains a requirements.txt file, installing npm requirements *****&quot;</span>; \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">cat</span> /app/requirements.txt | xargs npm --prefer-offline install --save; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">fi</span>; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">if</span> [ <span class="string">&quot;<span class="subst">$(ls -A /app/.ssh 2&gt;/dev/null)</span>&quot;</span> ]; <span class="keyword">then</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** App .ssh directory exists and has content, continuing *****&quot;</span>; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">else</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** App .ssh directory is empty, initialising ssh key and configuring known_hosts for common git repositories (github/gitlab) *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">rm</span> -rf ~/.ssh/* &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P <span class="string">&quot;&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    ssh-keyscan github.com &gt; ~/.ssh/known_hosts 2&gt;/dev/null &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    ssh-keyscan gitlab.com &gt;&gt; ~/.ssh/known_hosts 2&gt;/dev/null &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">cp</span> -r ~/.ssh /app; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">fi</span>; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">echo</span> <span class="string">&quot;***** Running git config, user = <span class="variable">$&#123;GIT_USER&#125;</span>, email = <span class="variable">$&#123;GIT_EMAIL&#125;</span> *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  git config --global user.email <span class="variable">$&#123;GIT_EMAIL&#125;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  git config --global user.name <span class="variable">$&#123;GIT_USER&#125;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">echo</span> <span class="string">&quot;***** Copying .ssh from App directory and setting permissions *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">cp</span> -r /app/.ssh ~/ &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">chmod</span> 600 ~/.ssh/id_rsa &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">chmod</span> 600 ~/.ssh/id_rsa.pub &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">chmod</span> 700 ~/.ssh &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">echo</span> <span class="string">&quot;***** Contents of public ssh key (for deploy) - *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">cat</span> ~/.ssh/id_rsa.pub &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">echo</span> <span class="string">&quot;***** download theme next - *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">if</span> [ <span class="string">&quot;<span class="subst">$(ls -A /app/themes/next)</span>&quot;</span> ]; <span class="keyword">then</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** themes/next directory exists and has content, continuing *****&quot;</span>; &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">else</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** themes/next directory is empty, download themes/next from github *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    git <span class="built_in">clone</span> -b yafey_config https://github.com/yafey/hexo-theme-next.git themes/next  &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">fi</span>; \</span></span><br><span class="line"><span class="language-bash">  \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">echo</span> <span class="string">&quot;***** Starting server on port <span class="variable">$&#123;HEXO_SERVER_PORT&#125;</span> *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  hexo clean &amp;&amp; hexo server -d -p <span class="variable">$&#123;HEXO_SERVER_PORT&#125;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>当然更简单的办法可以用你喜欢的编辑器保存为 <code>Dockerfile</code> 文件，再把  <code>Dockerfile</code> 文件上传到 <code>hexo-with-admin</code>  目录。</p>
+<p><img src="/qh/20210422131648.png" alt="img"></p>
+<h2 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h2><p>在 <code>hexo-with-admin</code>  目录执行生成镜像的操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">注意后面的小点</span></span><br><span class="line">docker build -t yafey/docker-hexo-admin:v1 -f .</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><del>如果出现</del>（肯定会出现）下面的错误：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">admin@DiskStation:/etc/docker$ docker build -t yafey/docker-hexo-admin:v1 .</span><br><span class="line">Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get &quot;http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/spurin-HexoWithAdmin/json&quot;: dial unix /var/run/docker.sock: connect: permission denied</span><br></pre></td></tr></table></figure>
+
+<p>原因是 docker 需要 root 运行权限。[^sudo-docker]</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker build -t yafey/docker-hexo-admin:v1 .    # 提升为 root 运行 docker。</span><br></pre></td></tr></table></figure>
+
+<p>或 </p>
+<p><del>切换到 root 用户下</del> （不推荐此方法，建议用上面的方式。 ）  <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35957944/article/details/116796522">https://blog.csdn.net/qq_35957944/article/details/116796522</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su -  # 切换到 root 用户。</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<p>完成后，在镜像中会找到</p>
+<p><img src="/qh/image-20220925013106818.png" alt="image-20220925013106818"></p>
+<h2 id="配置-amp-启动容器"><a href="#配置-amp-启动容器" class="headerlink" title="配置&amp;启动容器"></a>配置&amp;启动容器</h2><h3 id="卷"><a href="#卷" class="headerlink" title="卷"></a>卷</h3><p>在 <code>docker</code> 文件夹中，创建一个新文件夹，并将其命名为 <code>hexo</code>，然后在 <code>hexo</code> 文件夹中再创建 一个新的子文件夹 <code>blog</code>。</p>
+<table>
+<thead>
+<tr>
+<th>文件夹</th>
+<th>装载路径</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/docker/_Hexo/hexo-with-Hexon-and-admin</code></td>
+<td><code>/app</code></td>
+<td>存放设置</td>
+</tr>
+</tbody></table>
+<p><img src="/qh/20210420111438.png" alt="img"></p>
+<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><p>端口不冲突就行</p>
+<table>
+<thead>
+<tr>
+<th>本地端口</th>
+<th>容器端口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>4000</td>
+<td>4000</td>
+</tr>
+</tbody></table>
+<p><img src="/qh/20210420111503.png" alt="img"></p>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><table>
+<thead>
+<tr>
+<th>可变</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GIT_USER</td>
+<td>修改为您自己的 Github 用户</td>
+</tr>
+<tr>
+<td>GIT_EMAIL</td>
+<td>修改为您自己的 Github 邮箱</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>用自己的 <code>github</code> 账号是为了后续向 <code>github</code> 发布，会根据你提交的用户和邮箱生成 <code>SSH key</code>，如果只是在群晖上编辑和预览，可以随意。</p>
+</blockquote>
+<p><img src="/qh/20210420111748.png" alt="img"></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>在浏览器中输入 <code>http://群晖IP:4000</code>，开始并不能看到主界面，在日志中会显示在通过 <code>git</code> 拉取代码 ， 如果容器异常停止， 删除 目录 <code>hexo-with-Hexon-and-admin</code> 后重新启动。</p>
+<p>当你看到日志中出现 <code>Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</code> 时</p>
+<p><img src="/qh/20210420114029.png" alt="img"></p>
+<p>就可以在浏览器中输入 <code>http://群晖IP:4000</code> 看到主界面了</p>
+<p><img src="/qh/20210420114201.png" alt="img"></p>
+<p>而在浏览器中输入 <code>http://群晖IP:4000/admin</code> 即可看到 <code>hexo-admin</code> 的后台管理界面</p>
+<p><img src="/qh/20210420114409.png" alt="img"></p>
+<hr>
+<p>参考：</p>
+<p>[^npm-registry]: <a target="_blank" rel="noopener" href="https://blog.csdn.net/djc_18706636375/article/details/111148733">npm 切换镜像源</a></p>
+<blockquote>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">查看当前源： npm config get registry</span><br><span class="line">		## 默认官方源： http:<span class="comment">//registry.npmjs.org/</span></span><br><span class="line">npm切换源：</span><br><span class="line">切换至淘宝源：npm config set registry=http:<span class="comment">//registry.npm.taobao.org/</span></span><br><span class="line">切换至华为源：npm config set registry=https:<span class="comment">//mirrors.huaweicloud.com/repository/npm/</span></span><br><span class="line">切换至npm源：npm config set registry=http:<span class="comment">//registry.npmjs.org</span></span><br><span class="line">临时使用：npm --registry https:<span class="comment">//registry.npm.taobao.org install express</span></span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<p>[^laosu-hexo-admin]:           <a target="_blank" rel="noopener" href="https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">在群晖上复刻公网的Hexo</a>  |   <a target="_blank" rel="noopener" href="https://web.archive.org/web/20220924210332/https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">@archive.org</a>   </p>
+<p>[^Linux后台运行的几种方式]:   <a href="zhuanlan.zhihu.com/p/389045898">如何让Linux命令在后台运行 - 知乎</a> ↩</p>
+<blockquote>
+<p>如何让Linux命令在后台运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1、在你的命令后添加一个 &amp;</span><br><span class="line">2、使用<span class="built_in">bg</span>向后台发送运行命令</span><br><span class="line">3、使用 <span class="built_in">nohup</span> 向后台发送命令</span><br><span class="line">4、使用系统重定向运行后台命令</span><br><span class="line">5、使用 <span class="built_in">disown</span> 将 Linux 命令设置为后台运行</span><br><span class="line">6、使用 Tmux 在后台运行 Linux 命令</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<p>[^sudo-docker]:  <a target="_blank" rel="noopener" href="https://www.linuxrumen.com/rmxx/1665.html">方法1:用sudo运行所有docker命令</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YaFey</p>
+  <div class="site-description" itemprop="description">Putty 本无树，MinGW 亦非台</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/qh/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/qh/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/qh/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YaFey</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/qh/lib/anime.min.js"></script>
+  <script src="/qh/lib/velocity/velocity.min.js"></script>
+  <script src="/qh/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/qh/js/utils.js"></script>
+
+<script src="/qh/js/motion.js"></script>
+
+
+<script src="/qh/js/schemes/muse.js"></script>
+
+
+<script src="/qh/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/qh/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

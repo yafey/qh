@@ -83,9 +83,6 @@
 <h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it spurin-hexo1 /bin/bash </span><br><span class="line"></span><br><span class="line">git config --global user.email <span class="string">&quot;xxxx@gmail.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;xxxx&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 和 发布</span></span><br><span class="line">hexo clean &amp;&amp; hexo d github</span><br><span class="line"></span><br><span class="line"><span class="comment"># # 生成 </span></span><br><span class="line"><span class="comment"># hexo g    # hexo generate</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># # 发布</span></span><br><span class="line"><span class="comment"># hexo d   # hexo deploy</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
       <tags>
         <tag>Hexo</tag>
         <tag>Next 主题</tag>

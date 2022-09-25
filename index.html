@@ -123,7 +123,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/qh/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">1</span></a>
+    <a href="/qh/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">0</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -187,6 +187,85 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://yafey.github.io/qh/2022/09/hexo-with-admin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/qh/images/avatar.gif">
+      <meta itemprop="name" content="YaFey">
+      <meta itemprop="description" content="Putty 本无树，MinGW 亦非台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Y.a.F.e.Y Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/qh/2022/09/hexo-with-admin/" class="post-title-link" itemprop="url">Hexo-Admin</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-26 00:32:50" itemprop="dateCreated datePublished" datetime="2022-09-26T00:32:50+08:00">2022-09-26</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>不要看我了。Hexo-admin 基于 node:13-slim ( node:14+ 貌似有问题）。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/qh/2022/09/hexo-with-admin/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://yafey.github.io/qh/2022/09/hexo-next-beauty/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -240,294 +319,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Hexo基础设置"><a href="#Hexo基础设置" class="headerlink" title="Hexo基础设置"></a>Hexo基础设置</h1><h2 id="配置网站基础信息"><a href="#配置网站基础信息" class="headerlink" title="配置网站基础信息"></a>配置网站基础信息</h2><p>修改站点配置文件_config.yml中，修改：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Y.a.F.e.Y</span> <span class="string">Blog</span>					<span class="comment"># 网站标题</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&#x27;&#x27;</span>							<span class="comment"># 网站副标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&#x27;Putty 本无树，MinGW 亦非台&#x27;</span>	<span class="comment"># 描述，介绍网站的</span></span><br><span class="line"><span class="attr">keywords:</span>								<span class="comment"># 网站的关键字</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">YaFey</span>							<span class="comment"># 博主姓名</span></span><br><span class="line"><span class="attr">language:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">zh-CN</span>  <span class="comment"># 中文</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">en</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Chongqing</span>				<span class="comment"># 时区</span></span><br><span class="line"></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://yafey.github.io/qh</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:post_title/</span>  <span class="comment"># :year/:month/:day/:title/</span></span><br><span class="line"></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="Next主题进阶设置-hexo-next-cnblogs"><a href="#Next主题进阶设置-hexo-next-cnblogs" class="headerlink" title="Next主题进阶设置[^hexo-next-cnblogs]"></a>Next主题进阶设置[^hexo-next-cnblogs]</h1><h2 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h2><p>默认的主题配置文件 <code>_config.next.yml</code> 中，菜单只开启了首页和归档，我们根据需要，可以添加 about、tag、categories 等菜单</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="需要-npm-install-插件"><a href="#需要-npm-install-插件" class="headerlink" title="需要 npm install 插件"></a>需要 npm install 插件</h2><h3 id="字数统计、阅读时长"><a href="#字数统计、阅读时长" class="headerlink" title="字数统计、阅读时长"></a>字数统计、阅读时长</h3><blockquote>
-<p>首先安装插件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
-
-
-</blockquote>
-<p>主题配置文件 <code>_config.next.yml</code> 修改如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span> <span class="comment"># 统计信息不换行显示</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span> <span class="comment"># 文章统计信息中是否显示“本文字数/阅读时长”等描述文字</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">false</span> <span class="comment"># 底部footer站点统计信息中是否显示“本文字数/阅读时长”等描述文字</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">4</span> <span class="comment"># 平均字符长度</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span> <span class="comment"># 阅读速度, 一分钟阅读的字数</span></span><br></pre></td></tr></table></figure>
-
-<p>站点配置文件  <code>_config.yml</code>  新增如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新增文章字数统计</span></span><br><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="comment">#文章内是否显示</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span> <span class="comment"># 文章字数</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span> <span class="comment"># 阅读时长</span></span><br><span class="line">  <span class="comment"># 网页底部是否显示</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">false</span> <span class="comment"># 所有文章总字数</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">false</span> <span class="comment"># 所有文章阅读中时长</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="本地搜索插件"><a href="#本地搜索插件" class="headerlink" title="本地搜索插件"></a>本地搜索插件</h3><blockquote>
-<p>首先安装插件：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-symbols-count-time</span> <span class="string">--save</span></span><br></pre></td></tr></table></figure>
-
-</blockquote>
-<p>站点配置文件  <code>_config.yml</code>  新增如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 本地搜索</span></span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  <span class="built_in">limit</span>: 10000</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>path：索引文件的路径，相对于站点根目录</li>
-<li>field：搜索范围，默认是 post，还可以选择 page、all，设置成 all 表示搜索所有页面</li>
-<li>limit：限制搜索的条目数</li>
-</ul>
-<p>主题配置文件 <code>_config.next.yml</code> 修改如下 : </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  trigger: auto</span><br><span class="line">  top_n_per_article: 1 <span class="comment">#每篇文章中显示的搜索数量</span></span><br><span class="line">  unescape: <span class="literal">false</span></span><br><span class="line">  preload: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>[^hexo-next-cnblogs]: <a target="_blank" rel="noopener" href="https://www.cnblogs.com/TechSnail/p/12933623.html">Hexo进阶设置 Next 主题优化</a> | <a target="_blank" rel="noopener" href="https://web.archive.org/web/20220925093546/https://www.cnblogs.com/TechSnail/p/12933623.html">@archive.org</a></p>
-<h3 id="其他插件-laosu-hexo"><a href="#其他插件-laosu-hexo" class="headerlink" title="其他插件[^laosu-hexo]"></a>其他插件[^laosu-hexo]</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">百度推送插件</span></span><br><span class="line">npm install hexo-baidu-url-submit --save</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">hexo-generator-index2 插件</span></span><br><span class="line">npm install hexo-generator-index2 --save</span><br><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">symbols_count_time 插件</span></span><br><span class="line">npm install hexo-symbols-count-time --save</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">hexo-blog-encrypt 插件</span></span><br><span class="line">npm install hexo-blog-encrypt --save</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">hexo-deployer-git 插件</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Local Search</span></span><br><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>[^laosu-hexo]: <a target="_blank" rel="noopener" href="https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">在群晖上复刻公网的Hexo-上海老苏</a> | <a target="_blank" rel="noopener" href="https://web.archive.org/web/20220924210332/https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">@archive.org</a></p>
-<h2 id="入侵式修改"><a href="#入侵式修改" class="headerlink" title="入侵式修改"></a>入侵式修改</h2><h3 id="Hexo-next自适应宽屏"><a href="#Hexo-next自适应宽屏" class="headerlink" title="Hexo next自适应宽屏"></a><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/71ac0bdfdaba">Hexo next自适应宽屏</a></h3><blockquote>
-<p>效果见 <a target="_blank" rel="noopener" href="https://zengwu.com.cn/">https://zengwu.com.cn</a></p>
-</blockquote>
-<p>电脑屏幕都1920*1080了，用的next主题配置中只有960，文章只有可怜的700，这样看起来挺别扭的，特别是有代码块的时候，基本上都显示不完要滑动。可以通过修改next主题的文章页面宽度来解决。<br> 打开<code>\themes\next\source/css/_schemes/Picses/_layout.styl</code>在文件末尾添加代码</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// 以下为新增代码！！修改post宽度</span><br><span class="line"><span class="selector-tag">header</span>&#123; <span class="attribute">width</span>: <span class="number">80%</span> <span class="meta">!important</span>; &#125;</span><br><span class="line"><span class="selector-tag">header</span><span class="selector-class">.post-header</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: auto <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span> <span class="selector-class">.main-inner</span> &#123; <span class="attribute">width</span>: <span class="number">80%</span>; &#125;</span><br><span class="line"><span class="selector-class">.content-wrap</span> &#123; <span class="attribute">width</span>: <span class="built_in">calc</span>(<span class="number">100%</span> - <span class="number">260px</span>); &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.header</span> &#123;</span><br><span class="line">  +tablet() &#123;</span><br><span class="line">    <span class="attribute">width</span>: auto <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  +mobile() &#123;</span><br><span class="line">    <span class="attribute">width</span>: auto <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> <span class="selector-class">.main-inner</span> &#123;</span><br><span class="line">  +tablet() &#123;</span><br><span class="line">    <span class="attribute">width</span>: auto <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  +mobile() &#123;</span><br><span class="line">    <span class="attribute">width</span>: auto <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content-wrap</span> &#123;</span><br><span class="line">  +tablet() &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span> <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  +mobile() &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span> <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="Deployment-settings"><a href="#Deployment-settings" class="headerlink" title="Deployment settings"></a>Deployment settings</h2><h3 id="验证-ssh-key"><a href="#验证-ssh-key" class="headerlink" title="验证 ssh key"></a>验证 ssh key</h3><blockquote>
-<p>验证前需在平台已添加 <code>SSH 公钥</code>，如果你是按照我前面相同的卷设置， <code>id_rsa.pub</code> 密钥在 <code>/docker/hexo/blog/.ssh</code> 目录中</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">docker exec --user root -it spurin-hexo1 /bin/bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">生成 key</span></span><br><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P &quot;&quot; ;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## cp pub key to github</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">验证 github</span> </span><br><span class="line">ssh -T git@github.com</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将 gitee.com 写入 known_hosts</span></span><br><span class="line">ssh-keyscan gitee.com &gt;&gt; ~/.ssh/known_hosts 2&gt;/dev/null</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">验证 gitee</span></span><br><span class="line">ssh -T git@gitee.com</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将 e.coding.net 写入 known_hosts</span></span><br><span class="line">ssh-keyscan e.coding.net &gt;&gt; ~/.ssh/known_hosts 2&gt;/dev/null</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">验证 Coding</span></span><br><span class="line">ssh -T git@e.coding.net</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">复制</span></span><br><span class="line">cp -r ~/.ssh /myblog</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it spurin-hexo1 /bin/bash </span><br><span class="line"></span><br><span class="line">git config --global user.email <span class="string">&quot;xxxx@gmail.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;xxxx&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 和 发布</span></span><br><span class="line">hexo clean &amp;&amp; hexo d github</span><br><span class="line"></span><br><span class="line"><span class="comment"># # 生成 </span></span><br><span class="line"><span class="comment"># hexo g    # hexo generate</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># # 发布</span></span><br><span class="line"><span class="comment"># hexo d   # hexo deploy</span></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
-    <link itemprop="mainEntityOfPage" href="https://yafey.github.io/qh/2022/09/hexo-with-admin/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/qh/images/avatar.gif">
-      <meta itemprop="name" content="YaFey">
-      <meta itemprop="description" content="Putty 本无树，MinGW 亦非台">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Y.a.F.e.Y Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/qh/2022/09/hexo-with-admin/" class="post-title-link" itemprop="url">Hexo-Admin</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-09-24 00:10:24" itemprop="dateCreated datePublished" datetime="2022-09-24T00:10:24+08:00">2022-09-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-25 22:49:21" itemprop="dateModified" datetime="2022-09-25T22:49:21+08:00">2022-09-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/qh/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>内置 <code>Hexo-admin</code> 的镜像。</p>
-<blockquote>
-<p>当然还有别的玩法，通过 Github Action 自动发布到 Github Page 仓库。也就是说每当你写完博客直接提交到源仓库即可自动触发构建。这个留待以后再研究。</p>
-</blockquote>
-<p><strong>什么是 hexo-admin ?</strong></p>
-<blockquote>
-<p>hexo-admin 是一个 Hexo 博客引擎的管理用户界面插件，能实现在线管理 hexo 博客。</p>
-</blockquote>
-<h1 id="安装及优化-laosu-hexo-admin"><a href="#安装及优化-laosu-hexo-admin" class="headerlink" title="安装及优化[^laosu-hexo-admin]"></a>安装及优化[^laosu-hexo-admin]</h1><p>在群晖上以 Docker 方式安装。</p>
-<h2 id="编写-Dockerfile"><a href="#编写-Dockerfile" class="headerlink" title="编写 Dockerfile"></a>编写 Dockerfile</h2><blockquote>
-<p>基于 <a target="_blank" rel="noopener" href="https://github.com/spurin/docker-hexo">spurin&#x2F;docker-hexo</a> 。</p>
-<blockquote>
-<p>基于 node:13-slim ( node:14 有问题，See <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/4275">Hexo 4275</a> )</p>
-</blockquote>
-</blockquote>
-<p>在群晖的 <code>docker</code> 目录中新建 <code>hexo-with-admin</code>  目录，然后 <code>SSH</code> 客户端登录到群晖 ，执行下面的命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入 hexo-with-admin 目录</span></span><br><span class="line">cd hexo-with-admin/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建空的 Dockerfile 文件</span></span><br><span class="line">touch Dockerfile</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">编辑 Dockerfile 文件</span></span><br><span class="line">vi Dockerfile</span><br></pre></td></tr></table></figure>
-
-<p>在 <code>Dockerfile</code> 中写入下面的内容并保存</p>
-<blockquote>
-<ol>
-<li><p>基于 node:13-slim ( node:14 有问题，See <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/4275">Hexo 4275</a> )</p>
-</li>
-<li><p>Dockerfile 中添加 淘宝源。[^npm-registry] </p>
-<p><code>npm config set registry=http://registry.npm.taobao.org/ </code></p>
-<ul>
-<li><p>Dockerfile 中的写法为：  <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a63808777697">Docker 入门 (12) dockerfile 部署nodejs项目</a></p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定下载依赖淘宝镜像 , 学过前端都懂吧~</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>git clone Next 主题。（个人偏向于 不使用 npm nodemoudle 的方式  <del><code>npm install hexo-theme-next</code></del>。）</p>
-<p><del>社区维护的版本：<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">NexT v6 and v7</a> 🚩</del> ， 使用 自己改过的版本 ： <code>yafey/hexo-theme-next</code></p>
-<blockquote>
-<p>原作者已停止维护： <del><a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></del> 本项目已停止维护。⚠️  </p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo</span><br><span class="line">$ git <span class="built_in">clone</span> -b yafey_config https://github.com/yafey/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><del>清楚缓存并检测文件变动。<code>hexo clean &amp;&amp; hexo generate -w &amp; &amp;&amp; </code> (<code>hexo g -w</code> 后台运行)</del>[^Linux后台运行的几种方式] 。  <strong><code>hexo g -w</code>好像是线程阻塞的。</strong></p>
-</li>
-<li><p>设置为中国时区。<code>ENV TZ=CST-8</code></p>
-</li>
-</ol>
-</blockquote>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node:<span class="number">13</span>-slim</span><br><span class="line"></span><br><span class="line"><span class="keyword">MAINTAINER</span> James Spurin &lt;james@spurin.com&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># set as China time zone , otherwise , default UTC timezone will 8 hours after CST.</span></span><br><span class="line"><span class="keyword">ENV</span> TIME_ZONE=Asia/Shanghai </span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> <span class="built_in">ln</span> -snf /usr/share/zoneinfo/<span class="variable">$TIME_ZONE</span> /etc/localtime &amp;&amp; <span class="built_in">echo</span> <span class="variable">$TIME_ZONE</span> &gt; /etc/timezone</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set the server port as an environmental</span></span><br><span class="line"><span class="keyword">ENV</span> HEXO_SERVER_PORT=<span class="number">4000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set the git username and email</span></span><br><span class="line"><span class="keyword">ENV</span> GIT_USER=<span class="string">&quot;Joe Bloggs&quot;</span></span><br><span class="line"><span class="keyword">ENV</span> GIT_EMAIL=<span class="string">&quot;joe@bloggs.com&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定 npm 使用 淘宝镜像</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install requirements</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> \</span></span><br><span class="line"><span class="language-bash"> apt-get update &amp;&amp; \</span></span><br><span class="line"><span class="language-bash"> apt-get install git -y &amp;&amp; \</span></span><br><span class="line"><span class="language-bash"> npm install -g hexo-cli</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set workdir</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /app</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Expose Server Port</span></span><br><span class="line"><span class="keyword">EXPOSE</span> $&#123;HEXO_SERVER_PORT&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Build a base server and configuration if it doesnt exist, then start</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">if</span> [ <span class="string">&quot;<span class="subst">$(ls -A /app)</span>&quot;</span> ]; <span class="keyword">then</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** App directory exists and has content, continuing *****&quot;</span>; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">else</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** App directory is empty, initialising with hexo and hexo-admin *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    hexo init &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    npm install &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    npm install --save hexo-admin; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">fi</span>; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">if</span> [ ! -f /app/requirements.txt ]; <span class="keyword">then</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** App directory contains no requirements.txt file, continuing *****&quot;</span>; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">else</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** App directory contains a requirements.txt file, installing npm requirements *****&quot;</span>; \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">cat</span> /app/requirements.txt | xargs npm --prefer-offline install --save; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">fi</span>; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">if</span> [ <span class="string">&quot;<span class="subst">$(ls -A /app/.ssh 2&gt;/dev/null)</span>&quot;</span> ]; <span class="keyword">then</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** App .ssh directory exists and has content, continuing *****&quot;</span>; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">else</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** App .ssh directory is empty, initialising ssh key and configuring known_hosts for common git repositories (github/gitlab) *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">rm</span> -rf ~/.ssh/* &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P <span class="string">&quot;&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    ssh-keyscan github.com &gt; ~/.ssh/known_hosts 2&gt;/dev/null &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    ssh-keyscan gitlab.com &gt;&gt; ~/.ssh/known_hosts 2&gt;/dev/null &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">cp</span> -r ~/.ssh /app; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">fi</span>; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">echo</span> <span class="string">&quot;***** Running git config, user = <span class="variable">$&#123;GIT_USER&#125;</span>, email = <span class="variable">$&#123;GIT_EMAIL&#125;</span> *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  git config --global user.email <span class="variable">$&#123;GIT_EMAIL&#125;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  git config --global user.name <span class="variable">$&#123;GIT_USER&#125;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">echo</span> <span class="string">&quot;***** Copying .ssh from App directory and setting permissions *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">cp</span> -r /app/.ssh ~/ &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">chmod</span> 600 ~/.ssh/id_rsa &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">chmod</span> 600 ~/.ssh/id_rsa.pub &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">chmod</span> 700 ~/.ssh &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">echo</span> <span class="string">&quot;***** Contents of public ssh key (for deploy) - *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">cat</span> ~/.ssh/id_rsa.pub &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">echo</span> <span class="string">&quot;***** download theme next - *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">if</span> [ <span class="string">&quot;<span class="subst">$(ls -A /app/themes/next)</span>&quot;</span> ]; <span class="keyword">then</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** themes/next directory exists and has content, continuing *****&quot;</span>; &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">else</span> \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">echo</span> <span class="string">&quot;***** themes/next directory is empty, download themes/next from github *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    git <span class="built_in">clone</span> -b yafey_config https://github.com/yafey/hexo-theme-next.git themes/next  &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  <span class="keyword">fi</span>; \</span></span><br><span class="line"><span class="language-bash">  \</span></span><br><span class="line"><span class="language-bash">  <span class="built_in">echo</span> <span class="string">&quot;***** Starting server on port <span class="variable">$&#123;HEXO_SERVER_PORT&#125;</span> *****&quot;</span> &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">  hexo clean &amp;&amp; hexo server -d -p <span class="variable">$&#123;HEXO_SERVER_PORT&#125;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>当然更简单的办法可以用你喜欢的编辑器保存为 <code>Dockerfile</code> 文件，再把  <code>Dockerfile</code> 文件上传到 <code>hexo-with-admin</code>  目录。</p>
-<p><img src="/qh/20210422131648.png" alt="img"></p>
-<h2 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h2><p>在 <code>hexo-with-admin</code>  目录执行生成镜像的操作</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">注意后面的小点</span></span><br><span class="line">docker build -t yafey/docker-hexo-admin:v1 -f .</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><del>如果出现</del>（肯定会出现）下面的错误：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">admin@DiskStation:/etc/docker$ docker build -t yafey/docker-hexo-admin:v1 .</span><br><span class="line">Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get &quot;http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/spurin-HexoWithAdmin/json&quot;: dial unix /var/run/docker.sock: connect: permission denied</span><br></pre></td></tr></table></figure>
-
-<p>原因是 docker 需要 root 运行权限。[^sudo-docker]</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker build -t yafey/docker-hexo-admin:v1 .    # 提升为 root 运行 docker。</span><br></pre></td></tr></table></figure>
-
-<p>或 </p>
-<p><del>切换到 root 用户下</del> （不推荐此方法，建议用上面的方式。 ）  <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35957944/article/details/116796522">https://blog.csdn.net/qq_35957944/article/details/116796522</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su -  # 切换到 root 用户。</span><br></pre></td></tr></table></figure>
-
-
-</blockquote>
-<p>完成后，在镜像中会找到</p>
-<p><img src="/qh/image-20220925013106818.png" alt="image-20220925013106818"></p>
-<h2 id="配置-amp-启动容器"><a href="#配置-amp-启动容器" class="headerlink" title="配置&amp;启动容器"></a>配置&amp;启动容器</h2><h3 id="卷"><a href="#卷" class="headerlink" title="卷"></a>卷</h3><p>在 <code>docker</code> 文件夹中，创建一个新文件夹，并将其命名为 <code>hexo</code>，然后在 <code>hexo</code> 文件夹中再创建 一个新的子文件夹 <code>blog</code>。</p>
-<table>
-<thead>
-<tr>
-<th>文件夹</th>
-<th>装载路径</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>/docker/_Hexo/hexo-with-Hexon-and-admin</code></td>
-<td><code>/app</code></td>
-<td>存放设置</td>
-</tr>
-</tbody></table>
-<p><img src="/qh/20210420111438.png" alt="img"></p>
-<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><p>端口不冲突就行</p>
-<table>
-<thead>
-<tr>
-<th>本地端口</th>
-<th>容器端口</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>4000</td>
-<td>4000</td>
-</tr>
-</tbody></table>
-<p><img src="/qh/20210420111503.png" alt="img"></p>
-<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><table>
-<thead>
-<tr>
-<th>可变</th>
-<th>值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>GIT_USER</td>
-<td>修改为您自己的 Github 用户</td>
-</tr>
-<tr>
-<td>GIT_EMAIL</td>
-<td>修改为您自己的 Github 邮箱</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>用自己的 <code>github</code> 账号是为了后续向 <code>github</code> 发布，会根据你提交的用户和邮箱生成 <code>SSH key</code>，如果只是在群晖上编辑和预览，可以随意。</p>
-</blockquote>
-<p><img src="/qh/20210420111748.png" alt="img"></p>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>在浏览器中输入 <code>http://群晖IP:4000</code>，开始并不能看到主界面，在日志中会显示在通过 <code>git</code> 拉取代码 ， 如果容器异常停止， 删除 目录 <code>hexo-with-Hexon-and-admin</code> 后重新启动。</p>
-<p>当你看到日志中出现 <code>Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</code> 时</p>
-<p><img src="/qh/20210420114029.png" alt="img"></p>
-<p>就可以在浏览器中输入 <code>http://群晖IP:4000</code> 看到主界面了</p>
-<p><img src="/qh/20210420114201.png" alt="img"></p>
-<p>而在浏览器中输入 <code>http://群晖IP:4000/admin</code> 即可看到 <code>hexo-admin</code> 的后台管理界面</p>
-<p><img src="/qh/20210420114409.png" alt="img"></p>
-<hr>
-<p>参考：</p>
-<p>[^npm-registry]: <a target="_blank" rel="noopener" href="https://blog.csdn.net/djc_18706636375/article/details/111148733">npm 切换镜像源</a></p>
-<blockquote>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">查看当前源： npm config get registry</span><br><span class="line">		## 默认官方源： http:<span class="comment">//registry.npmjs.org/</span></span><br><span class="line">npm切换源：</span><br><span class="line">切换至淘宝源：npm config set registry=http:<span class="comment">//registry.npm.taobao.org/</span></span><br><span class="line">切换至华为源：npm config set registry=https:<span class="comment">//mirrors.huaweicloud.com/repository/npm/</span></span><br><span class="line">切换至npm源：npm config set registry=http:<span class="comment">//registry.npmjs.org</span></span><br><span class="line">临时使用：npm --registry https:<span class="comment">//registry.npm.taobao.org install express</span></span><br></pre></td></tr></table></figure>
-
-
-</blockquote>
-<p>[^laosu-hexo-admin]:           <a target="_blank" rel="noopener" href="https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">在群晖上复刻公网的Hexo</a>  |   <a target="_blank" rel="noopener" href="https://web.archive.org/web/20220924210332/https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">@archive.org</a>   </p>
-<p>[^Linux后台运行的几种方式]:   <a href="zhuanlan.zhihu.com/p/389045898">如何让Linux命令在后台运行 - 知乎</a> ↩</p>
-<blockquote>
-<p>如何让Linux命令在后台运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1、在你的命令后添加一个 &amp;</span><br><span class="line">2、使用<span class="built_in">bg</span>向后台发送运行命令</span><br><span class="line">3、使用 <span class="built_in">nohup</span> 向后台发送命令</span><br><span class="line">4、使用系统重定向运行后台命令</span><br><span class="line">5、使用 <span class="built_in">disown</span> 将 Linux 命令设置为后台运行</span><br><span class="line">6、使用 Tmux 在后台运行 Linux 命令</span><br></pre></td></tr></table></figure>
-
-
-</blockquote>
-<p>[^sudo-docker]:  <a target="_blank" rel="noopener" href="https://www.linuxrumen.com/rmxx/1665.html">方法1:用sudo运行所有docker命令</a></p>
-
+          <p>Hexo Next 主题优化 。  </p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/qh/2022/09/hexo-next-beauty/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -577,7 +377,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-25 23:54:30" itemprop="dateModified" datetime="2022-09-25T23:54:30+08:00">2022-09-25</time>
+                <time title="修改时间：2022-09-26 00:27:54" itemprop="dateModified" datetime="2022-09-26T00:27:54+08:00">2022-09-26</time>
               </span>
 
           <br>
@@ -606,19 +406,14 @@
 
       
           <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/qh/2022/09/hello-world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -702,12 +497,6 @@
           <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/qh/categories/">
-          
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/qh/tags/">

@@ -4,6 +4,8 @@
     <title>Hello World</title>
     <url>/qh/2022/09/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -21,7 +23,9 @@
   <entry>
     <title>Hexo Next 主题优化</title>
     <url>/qh/2022/09/hexo-next-beauty/</url>
-    <content><![CDATA[<h1 id="Hexo基础设置"><a href="#Hexo基础设置" class="headerlink" title="Hexo基础设置"></a>Hexo基础设置</h1><h2 id="配置网站基础信息"><a href="#配置网站基础信息" class="headerlink" title="配置网站基础信息"></a>配置网站基础信息</h2><p>修改站点配置文件_config.yml中，修改：</p>
+    <content><![CDATA[<p>Hexo Next 主题优化 。  </p>
+<span id="more"></span>
+<h1 id="Hexo基础设置"><a href="#Hexo基础设置" class="headerlink" title="Hexo基础设置"></a>Hexo基础设置</h1><h2 id="配置网站基础信息"><a href="#配置网站基础信息" class="headerlink" title="配置网站基础信息"></a>配置网站基础信息</h2><p>修改站点配置文件_config.yml中，修改：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Y.a.F.e.Y</span> <span class="string">Blog</span>					<span class="comment"># 网站标题</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&#x27;&#x27;</span>							<span class="comment"># 网站副标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&#x27;Putty 本无树，MinGW 亦非台&#x27;</span>	<span class="comment"># 描述，介绍网站的</span></span><br><span class="line"><span class="attr">keywords:</span>								<span class="comment"># 网站的关键字</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">YaFey</span>							<span class="comment"># 博主姓名</span></span><br><span class="line"><span class="attr">language:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">zh-CN</span>  <span class="comment"># 中文</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">en</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Chongqing</span>				<span class="comment"># 时区</span></span><br><span class="line"></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://yafey.github.io/qh</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:post_title/</span>  <span class="comment"># :year/:month/:day/:title/</span></span><br><span class="line"></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
 
 
@@ -93,7 +97,10 @@
   <entry>
     <title>Hexo-Admin</title>
     <url>/qh/2022/09/hexo-with-admin/</url>
-    <content><![CDATA[<p>内置 <code>Hexo-admin</code> 的镜像。</p>
+    <content><![CDATA[<p>不要看我了。Hexo-admin 基于 node:13-slim ( node:14+ 貌似有问题）。</p>
+<span id="more"></span>
+
+<p>内置 <code>Hexo-admin</code> 的镜像。</p>
 <blockquote>
 <p>当然还有别的玩法，通过 Github Action 自动发布到 Github Page 仓库。也就是说每当你写完博客直接提交到源仓库即可自动触发构建。这个留待以后再研究。</p>
 </blockquote>
@@ -233,9 +240,6 @@
 </blockquote>
 <p>[^sudo-docker]:  <a href="https://www.linuxrumen.com/rmxx/1665.html">方法1:用sudo运行所有docker命令</a></p>
 ]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
       <tags>
         <tag>Hexo</tag>
         <tag>Synology</tag>

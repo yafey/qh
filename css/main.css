@@ -1706,7 +1706,13 @@ header.header {
   margin-top: 40px;
   text-align: center;
 }
-.use-motion .post-block,
+.use-motion .post-block {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 30px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
 .use-motion .pagination,
 .use-motion .comments {
   visibility: hidden;
@@ -2776,7 +2782,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #03b34b;
+  background: #367309;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

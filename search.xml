@@ -299,25 +299,30 @@
 
 <h1 id="群晖通过Dockerfile构建-Image-synology-dockerfile-csdn"><a href="#群晖通过Dockerfile构建-Image-synology-dockerfile-csdn" class="headerlink" title="群晖通过Dockerfile构建 Image[^synology-dockerfile-csdn]"></a>群晖通过Dockerfile构建 Image[^synology-dockerfile-csdn]</h1><p>然后通过ssh连接群晖，登录root用户</p>
 <p>cd到docker目录(cd &#x2F;docker)  —- Dockerfile 存放目录</p>
-<p>构建自己的docker镜像( <strong><code>sudo docker build -t tomcat-heardfate .</code></strong> )  <strong>&#x2F;&#x2F; 这里必须要用 sudo，要不然没有权限</strong></p>
+<p>构建自己的docker镜像( <strong><code>sudo docker build -t tomcat-heardfate .</code></strong> )  <strong>&#x2F;&#x2F; 这里必须要用 sudo，要不然没有权限</strong>  ， 或者 <del><code>sudo su -  </code> 切换到 root 身份。</del> [^sudo-su-root-csdn]（不推荐）</p>
 <p>接着 ，去群晖的docker——&gt;映象 就会多出 tomcat-heardfate</p>
 <p><img src="/Center.jpeg" alt="群晖Docker"></p>
-<p>[^synology-dockerfile-csdn]: <a href="https://blog.csdn.net/heardy/article/details/73733731">群晖Docker通过Dockerfile构建镜像 部署Tomcat</a>  | <a href="https://web.archive.org/web/20221003160438/https://blog.csdn.net/heardy/article/details/73733731#">@archive.org</a></p>
+<p>[^synology-dockerfile-csdn]: <a href="https://blog.csdn.net/heardy/article/details/73733731">群晖Docker通过Dockerfile构建镜像 部署Tomcat</a>  | <a href="https://web.archive.org/web/20221003160438/https://blog.csdn.net/heardy/article/details/73733731#">@archive.org</a><br>[^sudo-su-root-csdn]: <a href="https://web.archive.org/web/20221003170431/https://blog.csdn.net/weixin_34049032/article/details/89898671">使用sudo进入root权限，以及防止root密码被恶意篡改</a> | <a href="https://web.archive.org/web/20221003170431/https://blog.csdn.net/weixin_34049032/article/details/89898671">@archive.org</a></p>
 <h1 id="push-Dockerfile-到docker-hub-push-dockerfile"><a href="#push-Dockerfile-到docker-hub-push-dockerfile" class="headerlink" title="push Dockerfile 到docker-hub[^push-dockerfile]"></a>push Dockerfile 到docker-hub[^push-dockerfile]</h1><h2 id="根据-Dockerfile-build-并测试"><a href="#根据-Dockerfile-build-并测试" class="headerlink" title="根据 Dockerfile build 并测试"></a>根据 Dockerfile build 并测试</h2><p>The docker build command processes this file generating a Docker Image in your Local Image Cache, which you can then start-up using the docker run command, or push to a permanent Image Repository.</p>
 <p>docker build 创建一个docker镜像，这个镜像可以在你本地运行。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker build -t mytomcat:1.0 .  # 注意最后的 &#x27;.&#x27; ,代表当前目录（Dockerfile 所在的目录）。</span><br><span class="line">docker run -p 8080:8080 -d mytomcat:1.0</span><br><span class="line">curl localhost:8080</span><br></pre></td></tr></table></figure>
 
-<h2 id="push-到-docker-hub"><a href="#push-到-docker-hub" class="headerlink" title="push 到 docker hub"></a>push 到 docker hub</h2><p>第一步：修改 tag 名称</p>
+<h2 id="push-到-docker-hub"><a href="#push-到-docker-hub" class="headerlink" title="push 到 docker hub"></a>push 到 docker hub</h2><p>第一步：命令行 docker 登录 。（ 不然 docker push 的时候会报 denied 错误。[^docker-push-denied-csdn]）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Docker login</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">输入用户名、密码</span></span><br></pre></td></tr></table></figure>
+
+<p>第二步：修改 tag 名称</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">必须先修改 tag 名称</span></span><br><span class="line">docker tag firstimage YOUR_DOCKERHUB_NAME/firstimage</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">举例： docker tag mytomcat:1.0 preparedman/mytomcat:1.0</span></span><br></pre></td></tr></table></figure>
 
-<p>第二步：push</p>
+<p>第三步：push</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker push YOUR_DOCKERHUB_NAME/firstimage</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">举例：docker push preparedman/mytomcat:1.0</span></span><br></pre></td></tr></table></figure>
 
 <p>Docker 测试</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">https</span>:<span class="comment">//cloud.docker.com/u/preparedman/repository/docker/preparedman/mytomcat</span></span><br></pre></td></tr></table></figure>
 
 <p><a href="https://stackoverflow.com/questions/39508018/docker-driver-failed-programming-external-connectivity-on-endpoint-webserver">https://stackoverflow.com/que...</a></p>
-<p>[^push-dockerfile]: <a href="https://cloud.tencent.com/developer/article/1518323">【docker】创建Dockerfile并push到docker-hub</a> | <a href="https://web.archive.org/web/20221003161847/https://cloud.tencent.com/developer/article/1518323">@archive.org</a></p>
+<p>[^push-dockerfile]: <a href="https://cloud.tencent.com/developer/article/1518323">【docker】创建Dockerfile并push到docker-hub</a> | <a href="https://web.archive.org/web/20221003161847/https://cloud.tencent.com/developer/article/1518323">@archive.org</a><br>[^docker-push-denied-csdn]: <a href="https://blog.csdn.net/Florine113/article/details/121748462">Docker发布镜像时报错denied: requested access to the resource is denied解决办法</a> | <a href="https://web.archive.org/web/20221003171220/https://blog.csdn.net/Florine113/article/details/121748462">@archive.org</a></p>
+<h1 id="GitHub-Action-自动构建项目容器镜像并-Push-到官方-Docker-Hub"><a href="#GitHub-Action-自动构建项目容器镜像并-Push-到官方-Docker-Hub" class="headerlink" title="GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub"></a><a href="https://senjianlu.com/2021/10/github-action-push-to-docker-hub/">GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub</a></h1><p><a href="https://web.archive.org/web/20220921171218/https://senjianlu.com/2021/10/github-action-push-to-docker-hub/">@archive.org</a></p>
+<p>TODO.</p>
 ]]></content>
       <categories>
         <category>Docker</category>

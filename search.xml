@@ -333,4 +333,227 @@
         <tag>Docker</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Hexo 使用 Waline 评论系统（Hexo Next 主题版本(V8+)的那些事）</title>
+    <url>/2022/10/2022-10-Hexo-Next-v8-versions-Waline/</url>
+    <content><![CDATA[<p>Hexo Next 主题版本(V8+)的那些事（使用Waline评论系统踩的坑）。</p>
+<span id="more"></span>
+
+
+
+<h1 id="使用-Waline-报错了。-waline-hexo-nexT-versions"><a href="#使用-Waline-报错了。-waline-hexo-nexT-versions" class="headerlink" title="使用 Waline 报错了。[^waline-hexo-nexT-versions]"></a>使用 Waline 报错了。[^waline-hexo-nexT-versions]</h1><blockquote>
+<p><strong>本文所用版本：Hexo v6.3.0（2022_09_08），NexT-Theme v8.13.1（2022_10_03）。</strong> 本文发布时间：2022年10月4日</p>
+</blockquote>
+<p>使用第三方的插件, <a href="https://www.npmjs.com/package/@waline/hexo-next">@waline&#x2F;hexo-next</a> 。结果使用<code>npm install</code>在Hexo目录安装后发现并不生效，运行<code>hexo s</code>出现如下错误：</p>
+<p>看起来是找不到swig模板文件，感觉有点莫名其妙。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo s</span></span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:5000 . Press Ctrl+C to stop.</span><br><span class="line">Unhandled rejection Template render error: (/home/finisky/themes/next/layout/post.swig)</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig) [Line 41, Column 16]</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig) [Line 54, Column 17]</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig)</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/_partials/head/head-unique.swig) [Line 10, Column 23]</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig) [Line 3, Column 3]</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig)</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/_partials/header/index.swig) [Line 6, Column 15]</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig)</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/_partials/header/sub-menu.swig) [Line 2, Column 29]</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig)</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/_partials/header/sub-menu.swig)</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig) [Line 5, Column 3]</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig) [Line 9, Column 12]</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig)</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/_partials/comments.swig) [Line 3, Column 14]</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig)</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/_partials/languages.swig)</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig)</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/_third-party/math/index.swig) [Line 4, Column 16]</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/post.swig)</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/_third-party/quicklink.swig)</span><br><span class="line">  Template render error: (/home/finisky/themes/next/layout/inject/bodyEnd/waline.swig) [Line 5, Column 15]</span><br><span class="line">  Error: Unable to call `next_data`, which is undefined or falsey</span><br><span class="line">    at Object._prettifyError (/home/finisky/node_modules/nunjucks/src/lib.js:36:11)</span><br><span class="line">    at /home/finisky/node_modules/nunjucks/src/environment.js:563:19</span><br><span class="line">    at Template.root [as rootRenderFunc] (eval at _compile (/home/finisky/node_modules/nunjucks/src/environment.js:633:18), &lt;anonymous&gt;:45:3)</span><br><span class="line">    at Template.render (/home/finisky/node_modules/nunjucks/src/environment.js:552:10)</span><br><span class="line">    at /home/finisky/themes/next/scripts/renderer.js:32:29</span><br><span class="line">    at _View._compiled (/home/finisky/node_modules/hexo/lib/theme/view.js:136:50)</span><br><span class="line">    at _View.render (/home/finisky/node_modules/hexo/lib/theme/view.js:39:17)</span><br><span class="line">    at /home/finisky/node_modules/hexo/lib/hexo/index.js:64:21</span><br><span class="line">    at tryCatcher (/home/finisky/node_modules/bluebird/js/release/util.js:16:23)</span><br><span class="line">    at /home/finisky/node_modules/bluebird/js/release/method.js:15:34</span><br><span class="line">    at RouteStream._read (/home/finisky/node_modules/hexo/lib/hexo/router.js:47:5)</span><br><span class="line">    at RouteStream.Readable.read (node:internal/streams/readable:483:10)</span><br><span class="line">    at resume_ (node:internal/streams/readable:981:12)</span><br><span class="line">    at processTicksAndRejections (node:internal/process/task_queues:83:21)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="更新到-NexT-Theme-v8-13-1（2022-10-03）"><a href="#更新到-NexT-Theme-v8-13-1（2022-10-03）" class="headerlink" title="更新到 NexT-Theme v8.13.1（2022_10_03）"></a>更新到 NexT-Theme v8.13.1（2022_10_03）</h2><p>最后找到了问题的根源，<span style="color:red"><strong>我用的是 NexT v7.8.0</strong> </span>。<code>git log</code>看了下最新的代码已经是去年的了。</p>
+<p><span style="color:blue"> <strong>再搜索发现了个更匪夷所思的事情，我发现了两个repo</strong></span>: </p>
+<ul>
+<li><del><a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></del>  ，<code>theme-next</code> 已废弃。</li>
+<li><a href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a> ，<span style="color:blue"><code>theme-next</code> <strong>start from v8</strong>。 </span></li>
+</ul>
+<p>而且前者在Google中的排名更高，Star更多。但再一看二者的最新版本，下面的居然是 v8.5.0。研究了半天终于在这找到了区别：</p>
+<blockquote>
+<blockquote>
+<p><a href="https://github.com/next-theme/hexo-theme-next/issues/36">https://github.com/next-theme/hexo-theme-next/issues/36</a></p>
+<p><a href="https://github.com/next-theme/hexo-theme-next/issues/4#issuecomment-626205848">https://github.com/next-theme/hexo-theme-next/issues/4#issuecomment-626205848</a></p>
+</blockquote>
+<ol>
+<li>简单来说，问题就是 theme-next 团队的 owner 始终拒绝向其它任何团队成员提供足够的权限，且 owner 本人自 2019 年 10 月起已连续半年不在线，导致其它活跃的团队成员无法管理仓库，也无法邀请新的成员。<ul>
+<li>由于对 theme-next 团队的未来不抱有期望，我作为 theme-next 的主要贡献者，自 2020 年 4 月起停止为旧的仓库贡献代码，并创建了新的组织，以确保维护工作正常进行。</li>
+</ul>
+</li>
+<li>只要能够收到足够多的 Bugfix &#x2F; Feature Request，每月更新肯定不是问题。</li>
+<li>目前已经发布的版本在这里： <a href="https://github.com/next-theme/hexo-theme-next/releases">https://github.com/next-theme/hexo-theme-next/releases</a><br> v8.0.0 版本计划在 Hexo 5.0 版本后发布。 <a href="https://theme-next.js.org/docs/getting-started/upgrade.html">https://theme-next.js.org/docs/getting-started/upgrade.html</a></li>
+</ol>
+</blockquote>
+<p>好了，问题变成了要把 v7.8.0 的 NexT 更新到 v8.5.0，但由于两个repo是独立的，只能手动更新<code>_config.yml</code>。而且更大的麻烦在于如果之前直接修改过模板源码，升级版本就更是费劲。</p>
+<p>按照官方推荐的方式更新到 v8.5.0： <a href="https://theme-next.js.org/docs/getting-started/upgrade.html">https://theme-next.js.org/docs/getting-started/upgrade.html</a></p>
+<p>然后一切就简单了，再在Hexo目录安装<code>@waline/hexo-next</code>，<code>hexo clean &amp; hexo g</code>一次通过，效果直接看评论区。</p>
+<p>[^waline-hexo-nexT-versions]: <a href="https://finisky.github.io/hexowaline/">Hexo使用Waline评论系统</a> | <a href="https://web.archive.org/web/20220925172850/https://finisky.github.io/hexowaline/">@achive.org</a> </p>
+<ul>
+<li><a href="https://finisky.github.io/simplestblogroll.en/">自定义 Links 页面</a> | <a href="https://web.archive.org/web/20221004120203/https://finisky.github.io/simplestblogroll.en/">@achive.org</a></li>
+</ul>
+<p><a href="https://www.bilibili.com/read/cv15189271/">https://www.bilibili.com/read/cv15189271/</a></p>
+<h1 id="为-Next-主题添加-Waline-评论系统-nexT-Waline-vercl-leancloudDB"><a href="#为-Next-主题添加-Waline-评论系统-nexT-Waline-vercl-leancloudDB" class="headerlink" title="为 Next 主题添加 Waline 评论系统[^nexT-Waline-vercl-leancloudDB ]"></a>为 Next 主题添加 Waline 评论系统[^nexT-Waline-vercl-leancloudDB ]</h1><p><code>Waline</code> 和 Valine 一样，也是支持基于 <a href="https://leancloud.app/">LeanCloud</a> 作为数据存储的，但是 <code>Waline</code> 支持的部署方式更多：</p>
+<p>为了方便，这里我只讲述最简单，零成本的数据库建立方法。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Waline</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Client</strong></td>
+<td><strong>Server</strong></td>
+<td><strong>Storage</strong></td>
+</tr>
+<tr>
+<td><a href="https://waline.js.org/">@waline&#x2F;client</a></td>
+<td><a href="https://vercel.com/">Vercel</a></td>
+<td><a href="https://leancloud.app/">LeanCloud</a></td>
+</tr>
+<tr>
+<td><a href="https://minivaline.js.org/">MiniValine</a></td>
+<td><a href="https://deta.sh/">Deta</a></td>
+<td><a href="https://clodbase.net/">CloudBase</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/asforest/AprilComment">AprilComment</a></td>
+<td><a href="https://cloudbase.net/">CloudBase</a></td>
+<td><a href="https://mongodb.com/">MongoDB</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://inspirecloud.com/">InspireCloud</a></td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://railway.app/">Railway</a></td>
+<td>SQLite</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://render.com/">Render</a></td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td></td>
+<td>Docker</td>
+<td><a href="https://github.com/">GitHub</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Virtual Host</td>
+<td><a href="https://docs.deta.sh/docs/base/about">Deta Base</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://inspirecloud.com/docs/nodejs/database/quickstart.html">InspireCloud</a></td>
+</tr>
+</tbody></table>
+<p>[^nexT-Waline-vercl-leancloudDB ]: <a href="https://qianfanguojin.top/2022/01/20/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BA-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0-Waline-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">Hexo博客进阶：为 Next 主题添加 Waline 评论系统</a> | <a href="https://web.archive.org/web/20221004123656/https://qianfanguojin.top/2022/01/20/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BA-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0-Waline-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">@achive.org</a> </p>
+<ul>
+<li><a href="https://blog.gezhong.vip/article/000023/waline.html#google_vignette">https://blog.gezhong.vip/article/000023/waline.html#google_vignette</a></li>
+</ul>
+<h2 id="第一步，配置评论数据库"><a href="#第一步，配置评论数据库" class="headerlink" title="第一步，配置评论数据库"></a>第一步，配置评论数据库</h2><p>我们需要注册一个 <a href="https://console.leancloud.app/register">Leancloud 国际版 </a>的账号，注意，一定要是 <strong>国际版</strong>(域名：<code>leancloud.app</code> )，国内版需要绑定备案的域名，比较麻烦。</p>
+<ol>
+<li><code>创建应用</code> – 应用名称,名称可以自己定义。</li>
+<li>选择<code>开发版</code> 点击<code>创建</code>。</li>
+<li>点击应用进入设置。<ul>
+<li>点击应用凭证，取得我们 <code>AppKey</code> 、<code>App id</code> 、以及 <code>MasterKey</code> 。</li>
+</ul>
+</li>
+</ol>
+<h2 id="安装服务端"><a href="#安装服务端" class="headerlink" title="安装服务端"></a>安装服务端</h2><p>由上面的表格可以看到，<code>Waline</code> 支持多种服务端，为了最简便上手，我们使用第一种方式，即在 <code>Vercl</code> 上安装服务端。首先，点击下面的按钮，一键部署：</p>
+<p><a href="https://vercel.com/import/project?template=https://github.com/walinejs/waline/tree/main/example" title="一键部署waline" one-link-mark="yes"><img src="https://vercel.com/button" alt="一键部署waline" title="一键部署waline" class=" ls-is-cached lazyloaded" fifu-width="92" fifu-height="32"></a></p>
+<ol>
+<li><p>应该需要注册一个账号，支持使用 <code>Github</code> 账号直接登录</p>
+</li>
+<li><p>登录后重新点进来，点击 <code>Create</code>，git repository 自定义。</p>
+</li>
+<li><p>然后等待下面 <code>Deploy</code> 构建完成，点击 <code>Go to Dashboard</code></p>
+</li>
+<li><p>找到 <code>Settings</code> &#x3D;&gt; <code>Environment Variables</code>，配置三个环境变量，对应如下表：</p>
+<blockquote>
+<p>提示</p>
+<p>如果你使用 LeanCloud 国内版，请额外配置 <code>LEAN_SERVER</code> 环境变量，值为你绑定好的域名。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Lean Cloud</th>
+<th>Vercel Environment</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AppID</td>
+<td>LEAN_ID</td>
+</tr>
+<tr>
+<td>AppKey</td>
+<td>LEAN_KEY</td>
+</tr>
+<tr>
+<td>MasterKey</td>
+<td>LEAN_MASTER_KEY</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>为了使环境变量生效，我们需要重新构建一次。在上方找到 <code>Deployments</code> ，选择第一个右边的三个点，点击 <code>Redeploy</code> 。</p>
+</li>
+<li><p>等待其构建结束，然后记住 <code>DOMAINS</code> 中的域名地址：<del><a href="https://xxxx.vercel.app/">https://xxxx.vercel.app</a></del> （该域名在国内无法访问，替代方案见下文） 。</p>
+</li>
+</ol>
+<h2 id="在Hexo-Next主题中配置"><a href="#在Hexo-Next主题中配置" class="headerlink" title="在Hexo Next主题中配置"></a>在Hexo Next主题中配置</h2><p>由于 Next 主题中并不自带 <code>Waline</code> 的评论配置，我们需要安装官方提供的插件。在 <code>Hexo</code> 根目录执行：</p>
+<figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line">npm install <span class="symbol">@waline</span>/hexo-<span class="keyword">next</span></span><br></pre></td></tr></table></figure>
+
+<p>找到 Next 的主题配置文件，在最后加上</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Waline</span></span><br><span class="line"><span class="comment"># For more information: https://waline.js.org, https://github.com/walinejs/waline</span></span><br><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment">#是否开启</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="string">waline-server-pearl.vercel.app</span> <span class="comment"># Waline #服务端地址，我们这里就是上面部署的 Vercel 地址</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">请文明评论呀</span> <span class="comment"># #评论框的默认文字</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># 头像风格</span></span><br><span class="line">  <span class="attr">meta:</span> [<span class="string">nick</span>, <span class="string">mail</span>, <span class="string">link</span>] <span class="comment"># 自定义评论框上面的三个输入框的内容</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># 评论数量多少时显示分页</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn</span> <span class="comment"># 语言, 可选值: en, zh-cn</span></span><br><span class="line">  <span class="comment"># Warning: 不要同时启用 `waline.visitor` 以及 `leancloud_visitors`.</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">false</span> <span class="comment"># 文章阅读统计</span></span><br><span class="line">  <span class="attr">comment_count:</span> <span class="literal">true</span> <span class="comment"># 如果为 false , 评论数量只会在当前评论页面显示, 主页则不显示</span></span><br><span class="line">  <span class="attr">requiredFields:</span> [] <span class="comment"># 设置用户评论时必填的信息，[nick,mail]: [nick] | [nick, mail]</span></span><br><span class="line">  <span class="attr">libUrl:</span> <span class="comment"># Set custom library cdn url</span></span><br></pre></td></tr></table></figure>
+
+<p>重新部署 <code>Hexo</code> ，就可以看到结果了。</p>
+<blockquote>
+<p>据反馈，Hexo 似乎在 8.x 的版本使用 waline 比较稳定，如果出现 <code>hexo g</code> 出错，可尝试升级 hexo 版本。</p>
+</blockquote>
+<h2 id="登录服务端"><a href="#登录服务端" class="headerlink" title="登录服务端"></a>登录服务端</h2><p>由于 <code>Waline</code> 有服务端，支持评论管理。<span style="color:red"><strong>第一个账号作为管理员。</strong> </span></p>
+<p>找到评论框，点击 <code>登录</code> 按钮，会弹出一个窗口，找到用户注册。</p>
+<p>注册好，登录之后即可进入评论管理的后台（<a href="https://xxxx.vercel.app/ui%EF%BC%89%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%AF%B9%E8%AF%84%E8%AE%BA%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E3%80%82">https://xxxx.vercel.app/ui），可以对评论进行管理。</a></p>
+<ul>
+<li>或者 登录到 Leancloud 上的 数据库进行管理。</li>
+</ul>
+<h2 id="部署后立即注册"><a href="#部署后立即注册" class="headerlink" title="部署后立即注册"></a>部署后立即注册</h2><p>部署后,会得到一个类似<code>https://pinglun.vercel.app/</code>的网址,记下来</p>
+<p>然后<strong>切记</strong>进入这个网址,注册管理员,被别人注册了你就惨了 ： https:&#x2F;&#x2F;[替换成你的].vercel.app&#x2F;ui&#x2F;register</p>
+<h2 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h2><h3 id="自定义头像"><a href="#自定义头像" class="headerlink" title="自定义头像"></a>自定义头像</h3><p>参考：<a href="https://waline.js.org/guide/client/avatar.html">头像配置 | Waline</a></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://waline.js.org/guide/get-started.html">https://waline.js.org/guide/get-started.html</a></p>
+<h1 id="Vercel-在中国大陆被魔法的临时解决方案-vercel-down"><a href="#Vercel-在中国大陆被魔法的临时解决方案-vercel-down" class="headerlink" title="Vercel 在中国大陆被魔法的临时解决方案[^vercel-down]"></a>Vercel 在中国大陆被魔法的临时解决方案[^vercel-down]</h1><p><strong>2022&#x2F;09&#x2F;04 更新：目前那个什么不存在的玩意实行了更高级别的魔法，*.vercel.app 已被DNS污染，目前可行的解决方案只有绑定自己的域名。</strong></p>
+<p>目前 Vercel 已给出临时解决方案，</p>
+<ol>
+<li>即将IP 76.76.21.21 改为 <code>76.223.126.88</code> （使用CNAME 的用户可以无感知过度）</li>
+<li>CNAME  cname.vercel-dns.com 改成 <code>cname-china.vercel-dns.com</code></li>
+</ol>
+<h2 id="域名-DNS-托管-vercel-domain"><a href="#域名-DNS-托管-vercel-domain" class="headerlink" title="域名 DNS 托管[^vercel-domain]"></a>域名 DNS 托管[^vercel-domain]</h2><ol>
+<li>cloudflare</li>
+<li>腾讯 DNSPod</li>
+<li>阿里云</li>
+</ol>
+<p>以 cloudflare 为例：</p>
+<blockquote>
+<p>注： 实际使用时， 未设置 www 的 CNAME ， 要把 vercel-dns.com 的 代理状态关闭，不然一直 308 。</p>
+</blockquote>
+<p>**如果你的域名没有绑定过任何一条A记录，则添加一条域名A记录指向Vercel服务器地址 76.223.126.88 **</p>
+<p><img src="/cloudflare-vervel.png" alt="cloudflare-vervel.png"></p>
+<h2 id="Vercel-控制台配置"><a href="#Vercel-控制台配置" class="headerlink" title="Vercel 控制台配置"></a>Vercel 控制台配置</h2><ul>
+<li><p>在 Vercel 控制面板中找到<code>Setting</code>→<code>Domains</code>→<code>Add</code>，输入域名</p>
+</li>
+<li><p>Add之后，如果看到下图中的提示（Invalid Configuration）👇,说明第一步域名服务商后台的配置有误，需要返回前面的步骤检查一下～</p>
+<p><img src="/cloudflare-vervel-failed.png"></p>
+</li>
+<li><p>如果域名服务配置正常，Vercel 的卡片会变成如图的样子：</p>
+<p><img src="/cloudflare-vervel-succeed.png"></p>
+</li>
+</ul>
+<p>[^vercel-down]: <a href="https://blog.projectoms.com/pages/246.html">Vercel 在中国大陆被魔法的临时解决方案</a> | <a href="https://web.archive.org/web/20221005053011/https://blog.projectoms.com/pages/246.html">@achive.org</a></p>
+<ul>
+<li><a href="https://leidison.com/vercel-openwall">Vercel 被墙后国内无法访问的解决方案</a> | <a href="https://web.archive.org/web/20221005053520/https://leidison.com/vercel-openwall">@achive.org</a></li>
+<li><a href="https://www.ixiqin.com/2022/03/26/solve-vercel-access-is-the-problem-of-wall-in-the-country">解决 Vercel 在国内访问被墙的问题</a> | <a href="https://web.archive.org/web/20221005053718/https://www.ixiqin.com/2022/03/26/solve-vercel-access-is-the-problem-of-wall-in-the-country/">@achive.org</a></li>
+</ul>
+<p>[^vercel-domain]: <a href="https://tangly1024.com/article/vercel-domain">https://tangly1024.com/article/vercel-domain</a>  | <a href="https://web.archive.org/web/20221005053520/https://leidison.com/vercel-openwall">@achive.org</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT-Theme</tag>
+        <tag>Waline</tag>
+      </tags>
+  </entry>
 </search>

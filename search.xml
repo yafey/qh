@@ -529,15 +529,15 @@
 <p>注： 实际使用时， 未设置 www 的 CNAME ， 要把 vercel-dns.com 的 代理状态关闭，不然一直 308 。</p>
 </blockquote>
 <p>**如果你的域名没有绑定过任何一条A记录，则添加一条域名A记录指向Vercel服务器地址 76.223.126.88 **</p>
-<p><img src="/cloudflare-vervel.png" alt="cloudflare-vervel.png"></p>
+<p><img src="/2022/10/2022-10-Hexo-Next-v8-versions-Waline/cloudflare-vervel.png" alt="cloudflare-vervel.png"></p>
 <h2 id="Vercel-控制台配置"><a href="#Vercel-控制台配置" class="headerlink" title="Vercel 控制台配置"></a>Vercel 控制台配置</h2><ul>
 <li><p>在 Vercel 控制面板中找到<code>Setting</code>→<code>Domains</code>→<code>Add</code>，输入域名</p>
 </li>
 <li><p>Add之后，如果看到下图中的提示（Invalid Configuration）👇,说明第一步域名服务商后台的配置有误，需要返回前面的步骤检查一下～</p>
-<p><img src="/cloudflare-vervel-failed.png"></p>
+<p><img src="/2022/10/2022-10-Hexo-Next-v8-versions-Waline/cloudflare-vervel-failed.png"></p>
 </li>
 <li><p>如果域名服务配置正常，Vercel 的卡片会变成如图的样子：</p>
-<p><img src="/cloudflare-vervel-succeed.png"></p>
+<p><img src="/2022/10/2022-10-Hexo-Next-v8-versions-Waline/cloudflare-vervel-succeed.png"></p>
 </li>
 </ul>
 <p>[^vercel-down]: <a href="https://blog.projectoms.com/pages/246.html">Vercel 在中国大陆被魔法的临时解决方案</a> | <a href="https://web.archive.org/web/20221005053011/https://blog.projectoms.com/pages/246.html">@achive.org</a></p>

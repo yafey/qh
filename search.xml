@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/hello-world/</url>
+    <url>/2022/09/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <span id="more"></span>
 
@@ -22,7 +22,7 @@
   </entry>
   <entry>
     <title>Hexo Next 主题优化</title>
-    <url>/hexo-next-beauty/</url>
+    <url>/2022/09/hexo-next-beauty/</url>
     <content><![CDATA[<p>Hexo Next 主题优化 。  </p>
 <span id="more"></span>
 
@@ -136,7 +136,7 @@
   </entry>
   <entry>
     <title>Hexo-Admin</title>
-    <url>/hexo-with-admin/</url>
+    <url>/2022/09/hexo-with-admin/</url>
     <content><![CDATA[<p>不要看我了。Hexo-admin 基于 node:13-slim ( node:14+ 貌似有问题）。</p>
 <span id="more"></span>
 
@@ -291,7 +291,7 @@
   </entry>
   <entry>
     <title>群晖通过 Dockerfile 构建</title>
-    <url>/2022-synology-dockerfile-build/</url>
+    <url>/2022/10/2022-synology-dockerfile-build/</url>
     <content><![CDATA[<p>群晖通过 Dockerfile 构建。  </p>
 <span id="more"></span>
 
@@ -335,7 +335,7 @@
   </entry>
   <entry>
     <title>Hexo 使用 Waline 评论系统（Hexo Next 主题版本(V8+)的那些事）</title>
-    <url>/2022-10-Hexo-Next-v8-versions-Waline/</url>
+    <url>/2022/10/2022-10-Hexo-Next-v8-versions-Waline/</url>
     <content><![CDATA[<p>Hexo Next 主题版本(V8+)的那些事（使用Waline评论系统踩的坑）。</p>
 <span id="more"></span>
 

@@ -1125,7 +1125,7 @@ header.header {
 }
 @media (min-width: 1600px) {
   .header-inner {
-    width: 70%;
+    width: 80%;
   }
 }
 .site-brand-container {
@@ -1565,7 +1565,7 @@ header.header {
 }
 @media (min-width: 1600px) {
   .footer-inner {
-    width: 70%;
+    width: 80%;
   }
 }
 .use-motion .footer {
@@ -2716,7 +2716,7 @@ hr {
 }
 @media (min-width: 1600px) {
   .main-inner {
-    width: 70%;
+    width: 80%;
   }
 }
 @media (max-width: 767px) {
@@ -2782,7 +2782,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #17944a;
+  background: #ff13af;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

@@ -225,35 +225,6 @@
       </tags>
   </entry>
   <entry>
-    <title>支持在线可视化编辑的 Hexon（替代 Hexo-Admin）</title>
-    <url>/2022/10/2022-10-hexo-with-Hexon/</url>
-    <content><![CDATA[<p>支持在线可视化编辑的 Hexon（替代 hexo-admin）。  </p>
-<span id="more"></span>
-
-
-
-<h1 id="什么是-Hexon-？-laosu-hexon"><a href="#什么是-Hexon-？-laosu-hexon" class="headerlink" title="什么是 Hexon ？[^laosu-hexon]"></a>什么是 Hexon ？[^laosu-hexon]</h1><blockquote>
-<p><a href="https://github.com/gethexon/hexon"><code>Hexon</code></a> 是一款在线 <code>hexo</code> 博客编辑器，在 0.6 版本之前叫 <code>winwin-hexo-editor</code>。最新的 <code>Hexon</code> 源代码 v0.12.4（23 Jun 2022）。</p>
-</blockquote>
-<p><code>Hexon</code> 的界面 比 <code>hexo-admin</code> 好看多了，功能排布也更合理，先上一张图感受下 ：</p>
-<p><img src="/20210422093136.png" alt="img"></p>
-<p>[^laosu-hexon]: <a href="https://laosu.ml/2021/05/10/%E6%94%AF%E6%8C%81%E5%9C%A8%E7%BA%BF%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E8%BE%91%E7%9A%84Hexon/">支持在线可视化编辑的Hexon–laosu.ml</a>  | <a href="https://web.archive.org/web/20221006200104/https://laosu.ml/2021/05/10/%E6%94%AF%E6%8C%81%E5%9C%A8%E7%BA%BF%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E8%BE%91%E7%9A%84Hexon/">@achive.org</a></p>
-<h1 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h1><blockquote>
-<p>切记！！！ <code>winwin-hexo-editor</code> 只是 <code>hexo</code> 博客的编辑器，所以在部署前需确保 <code>hexo</code> 博客可用。如果您还不知道怎么部署，请参考老苏的上一篇文章『 <a href="https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">在群晖上复刻公网的Hexo</a> 』</p>
-</blockquote>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>没有找到 <code>Hexon</code> 或者 <code>winwin-hexo-editor</code> 的镜像，所以这次我们准备自己来构建。</p>
-<p>如果你觉得自己构建麻烦，可以直接跳到方式二，下载老苏已经构建好的镜像。</p>
-<div class="tabs" id=""><ul class="nav-tabs"><li class="tab active"><a href="#-1">极简操作</a></li><li class="tab"><a href="#-2">详细配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="-1"></div><div class="tab-pane" id="-2"></div></div></div>]]></content>
-      <categories>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Hexon</tag>
-        <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>群晖通过 Dockerfile 构建</title>
     <url>/2022/10/2022-synology-dockerfile-build/</url>
     <content><![CDATA[<p>群晖通过 Dockerfile 构建。  </p>
@@ -584,6 +555,35 @@
         <tag>Hexo</tag>
         <tag>Synology</tag>
         <tag>群晖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>支持在线可视化编辑的 Hexon（替代 Hexo-Admin）</title>
+    <url>/2022/10/2022-10-hexo-with-hexon-editor/</url>
+    <content><![CDATA[<p>支持在线可视化编辑的 Hexon（替代 hexo-admin）。  </p>
+<span id="more"></span>
+
+
+
+<h1 id="什么是-Hexon-？-laosu-hexon"><a href="#什么是-Hexon-？-laosu-hexon" class="headerlink" title="什么是 Hexon ？[^laosu-hexon]"></a>什么是 Hexon ？[^laosu-hexon]</h1><blockquote>
+<p><a href="https://github.com/gethexon/hexon"><code>Hexon</code></a> 是一款在线 <code>hexo</code> 博客编辑器，在 0.6 版本之前叫 <code>winwin-hexo-editor</code>。最新的 <code>Hexon</code> 源代码 v0.12.4（23 Jun 2022）。</p>
+</blockquote>
+<p><code>Hexon</code> 的界面 比 <code>hexo-admin</code> 好看多了，功能排布也更合理，先上一张图感受下 ：</p>
+<p><img src="/2022/10/2022-10-hexo-with-hexon-editor/20210422093136.png" alt="img"></p>
+<p>[^laosu-hexon]: <a href="https://laosu.ml/2021/05/10/%E6%94%AF%E6%8C%81%E5%9C%A8%E7%BA%BF%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E8%BE%91%E7%9A%84Hexon/">支持在线可视化编辑的Hexon–laosu.ml</a>  | <a href="https://web.archive.org/web/20221006200104/https://laosu.ml/2021/05/10/%E6%94%AF%E6%8C%81%E5%9C%A8%E7%BA%BF%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E8%BE%91%E7%9A%84Hexon/">@achive.org</a></p>
+<h1 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h1><blockquote>
+<p>切记！！！ <code>winwin-hexo-editor</code> 只是 <code>hexo</code> 博客的编辑器，所以在部署前需确保 <code>hexo</code> 博客可用。如果您还不知道怎么部署，请参考老苏的上一篇文章『 <a href="https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">在群晖上复刻公网的Hexo</a> 』</p>
+</blockquote>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>没有找到 <code>Hexon</code> 或者 <code>winwin-hexo-editor</code> 的镜像，所以这次我们准备自己来构建。</p>
+<p>如果你觉得自己构建麻烦，可以直接跳到方式二，下载老苏已经构建好的镜像。</p>
+<div class="tabs" id=""><ul class="nav-tabs"><li class="tab active"><a href="#-1">极简操作</a></li><li class="tab"><a href="#-2">详细配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="-1"></div><div class="tab-pane" id="-2"></div></div></div>]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Hexon</tag>
+        <tag>Docker</tag>
       </tags>
   </entry>
 </search>

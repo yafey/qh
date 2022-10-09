@@ -248,7 +248,7 @@
 <div class="tabs" id="构建镜像"><ul class="nav-tabs"><li class="tab active"><a href="#构建镜像-1">极简操作</a></li><li class="tab"><a href="#构建镜像-2">详细配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="构建镜像-1"><ol>
 <li><p>注册表搜索 <code>wbsu2003/docker-hexo-editor</code>  </p>
 <p>2022.09.24更新 ， v2 版构建构基于 <code>Hexon</code>；</p>
-<p><img src="/./image-20221009131559447.png" alt="image-20221009131559447"></p>
+<img src="./image-20221009131559447.png" alt="image-20221009131559447" style="zoom:100%;" />
 </li>
 <li><p>创建容器</p>
 <blockquote>
@@ -266,20 +266,18 @@
 <p>在访问之前，我们还要完成相关的设置，包括 Hexon 账号和密码等</p>
 <ul>
 <li><p>群晖 启动 容器 进行设置 。 （进入「终端机」进行设置。）</p>
-<p><img src="/image-20221009132917688.png" alt="image-20221009132917688"></p>
+<img src="image-20221009132917688.png" alt="image-20221009132917688" style="zoom:100%;" />
 </li>
 <li><p>命令行方式</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入容器</span></span><br><span class="line">docker exec --user root -it hexon /bin/bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入 server 目录</span></span><br><span class="line">cd  hexo-editor/server/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置</span></span><br><span class="line">pnpm run setup</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">退出容器</span></span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
 
-<p>   <img src="/202209241748148.png" alt="img"></p>
-</li>
+   <img src="202209241748148.png" alt="img" style="zoom:100%;" /></li>
 </ul>
 </li>
 <li><p>运行</p>
 <p>在浏览器中输入 <a href="http://diskstation:5888/">http://diskstation:5888</a> 就能看到登录界面</p>
 <p>用前面设置的账号密码登录</p>
-<p><img src="/202209241834504.png" alt="img"></p>
-</li>
+<img src="202209241834504.png" alt="img" style="zoom:100%;" /></li>
 </ol></div><div class="tab-pane" id="构建镜像-2"><p>自己构建。</p></div></div></div>]]></content>
       <categories>
         <category>Docker</category>

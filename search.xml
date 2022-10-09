@@ -1,6 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>支持在线可视化编辑的 Hexon（替代 Hexo-Admin）</title>
+    <url>/2022/10/2022-10-hexo-with-hexon-editor/</url>
+    <content><![CDATA[<p>支持在线可视化编辑的 Hexon（替代 hexo-admin）。  </p>
+<span id="more"></span>
+
+
+
+<h1 id="什么是-Hexon-？-laosu-hexon"><a href="#什么是-Hexon-？-laosu-hexon" class="headerlink" title="什么是 Hexon ？[^laosu-hexon]"></a>什么是 Hexon ？[^laosu-hexon]</h1><blockquote>
+<p><a href="https://github.com/gethexon/hexon"><code>Hexon</code></a> 是一款在线 <code>hexo</code> 博客编辑器，在 0.6 版本之前叫 <code>winwin-hexo-editor</code>。最新的 <code>Hexon</code> 源代码 v0.12.4（23 Jun 2022）。</p>
+</blockquote>
+<p><code>Hexon</code> 的界面 比 <code>hexo-admin</code> 好看多了，功能排布也更合理，先上一张图感受下 ：</p>
+<p><img src="/2022/10/2022-10-hexo-with-hexon-editor/20210422093136.png" alt="img"></p>
+<p>[^laosu-hexon]: <a href="https://laosu.ml/2021/05/10/%E6%94%AF%E6%8C%81%E5%9C%A8%E7%BA%BF%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E8%BE%91%E7%9A%84Hexon/">支持在线可视化编辑的Hexon–laosu.ml</a>  | <a href="https://web.archive.org/web/20221006200104/https://laosu.ml/2021/05/10/%E6%94%AF%E6%8C%81%E5%9C%A8%E7%BA%BF%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E8%BE%91%E7%9A%84Hexon/">@achive.org</a></p>
+<h1 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h1><blockquote>
+<p>切记！！！ <code>winwin-hexo-editor</code> 只是 <code>hexo</code> 博客的编辑器，所以在部署前需确保 <code>hexo</code> 博客可用。如果您还不知道怎么部署，请参考老苏的上一篇文章『 <a href="https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">在群晖上复刻公网的Hexo</a> 』</p>
+</blockquote>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>没有找到 <code>Hexon</code> 或者 <code>winwin-hexo-editor</code> 的镜像，所以这次我们准备自己来构建。</p>
+<p>如果你觉得自己构建麻烦，可以直接跳到方式二，下载老苏已经构建好的镜像。</p>
+<div class="tabs" id="构建镜像"><ul class="nav-tabs"><li class="tab active"><a href="#构建镜像-1">极简操作</a></li><li class="tab"><a href="#构建镜像-2">详细配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="构建镜像-1"><ol>
+<li><p>注册表搜索 <code>wbsu2003/docker-hexo-editor</code>  </p>
+<p>2022.09.24更新 ， v2 版构建构基于 <code>Hexon</code>；</p>
+<p><img src="/image-20221009131559447.png" alt="image-20221009131559447"></p>
+</li>
+<li><p>创建容器</p>
+<blockquote>
+<p>其中 <code>/volume2/docker/hexo/blog</code> 是已经安装好的 <code>hexo</code> 的根目录，不了解的看看上一篇『 <a href="https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">在群晖上复刻公网的Hexo</a> 』</p>
+</blockquote>
+<p><img src="/image-20221009132321751.png" alt="image-20221009132321751"></p>
+<ul>
+<li><p>或者 命令行安装</p>
+<p>如果你熟悉命令行，可能用 docker cli 更快捷</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">新建文件夹 hexo 和 子目录</span></span><br><span class="line">mkdir -p /volume2/docker/hexo/blog</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入 hexo 目录</span></span><br><span class="line">cd /volume2/docker/hexo</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">运行容器</span></span><br><span class="line">docker run -d \</span><br><span class="line">   --name hexon \</span><br><span class="line">   -p 5888:5777 \</span><br><span class="line">   -e HEXO_EDIT_PORT=5888 \</span><br><span class="line">   -v $(pwd)/blog:/myblog \</span><br><span class="line">   wbsu2003/docker-hexo-editor:latest</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Hexon 基础设置</p>
+<p>在访问之前，我们还要完成相关的设置，包括 Hexon 账号和密码等</p>
+<ul>
+<li><p>群晖 启动 容器 进行设置 。 （进入「终端机」进行设置。）</p>
+<p><img src="/image-20221009132917688.png" alt="image-20221009132917688"></p>
+</li>
+<li><p>命令行方式</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入容器</span></span><br><span class="line">docker exec --user root -it hexon /bin/bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入 server 目录</span></span><br><span class="line">cd  hexo-editor/server/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置</span></span><br><span class="line">pnpm run setup</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">退出容器</span></span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<p>   <img src="/202209241748148.png" alt="img"></p>
+</li>
+</ul>
+</li>
+<li><p>运行</p>
+<p>在浏览器中输入 <a href="http://diskstation:5888/">http://diskstation:5888</a> 就能看到登录界面</p>
+<p>用前面设置的账号密码登录</p>
+<p><img src="/202209241834504.png" alt="img"></p>
+</li>
+</ol></div><div class="tab-pane" id="构建镜像-2"><p>自己构建。</p></div></div></div>]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Hexon</tag>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>群晖通过 Dockerfile 构建</title>
+    <url>/2022/10/2022-synology-dockerfile-build/</url>
+    <content><![CDATA[<p>群晖通过 Dockerfile 构建。  </p>
+<span id="more"></span>
+
+
+
+<h1 id="群晖通过Dockerfile构建-Image-synology-dockerfile-csdn"><a href="#群晖通过Dockerfile构建-Image-synology-dockerfile-csdn" class="headerlink" title="群晖通过Dockerfile构建 Image[^synology-dockerfile-csdn]"></a>群晖通过Dockerfile构建 Image[^synology-dockerfile-csdn]</h1><p>然后通过ssh连接群晖，登录root用户</p>
+<p>cd到docker目录(cd &#x2F;docker)  —- Dockerfile 存放目录</p>
+<p>构建自己的docker镜像( <strong><code>sudo docker build -t tomcat-heardfate .</code></strong> )  <strong>&#x2F;&#x2F; 这里必须要用 sudo，要不然没有权限</strong>  ， 或者 <del><code>sudo su -  </code> 切换到 root 身份。</del> [^sudo-su-root-csdn]（不推荐）</p>
+<p>接着 ，去群晖的docker——&gt;映象 就会多出 tomcat-heardfate</p>
+<p><img src="/Center.jpeg" alt="群晖Docker"></p>
+<p>[^synology-dockerfile-csdn]: <a href="https://blog.csdn.net/heardy/article/details/73733731">群晖Docker通过Dockerfile构建镜像 部署Tomcat</a>  | <a href="https://web.archive.org/web/20221003160438/https://blog.csdn.net/heardy/article/details/73733731#">@archive.org</a><br>[^sudo-su-root-csdn]: <a href="https://web.archive.org/web/20221003170431/https://blog.csdn.net/weixin_34049032/article/details/89898671">使用sudo进入root权限，以及防止root密码被恶意篡改</a> | <a href="https://web.archive.org/web/20221003170431/https://blog.csdn.net/weixin_34049032/article/details/89898671">@archive.org</a></p>
+<h1 id="push-Dockerfile-到docker-hub-push-dockerfile"><a href="#push-Dockerfile-到docker-hub-push-dockerfile" class="headerlink" title="push Dockerfile 到docker-hub[^push-dockerfile]"></a>push Dockerfile 到docker-hub[^push-dockerfile]</h1><h2 id="根据-Dockerfile-build-并测试"><a href="#根据-Dockerfile-build-并测试" class="headerlink" title="根据 Dockerfile build 并测试"></a>根据 Dockerfile build 并测试</h2><p>The docker build command processes this file generating a Docker Image in your Local Image Cache, which you can then start-up using the docker run command, or push to a permanent Image Repository.</p>
+<p>docker build 创建一个docker镜像，这个镜像可以在你本地运行。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker build -t mytomcat:1.0 .  # 注意最后的 &#x27;.&#x27; ,代表当前目录（Dockerfile 所在的目录）。</span><br><span class="line">docker run -p 8080:8080 -d mytomcat:1.0</span><br><span class="line">curl localhost:8080</span><br></pre></td></tr></table></figure>
+
+<h2 id="push-到-docker-hub"><a href="#push-到-docker-hub" class="headerlink" title="push 到 docker hub"></a>push 到 docker hub</h2><p>第一步：命令行 docker 登录 。（ 不然 docker push 的时候会报 denied 错误。[^docker-push-denied-csdn]）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Docker login</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">输入用户名、密码</span></span><br></pre></td></tr></table></figure>
+
+<p>第二步：修改 tag 名称</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">必须先修改 tag 名称</span></span><br><span class="line">docker tag firstimage YOUR_DOCKERHUB_NAME/firstimage</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">举例： docker tag mytomcat:1.0 preparedman/mytomcat:1.0</span></span><br></pre></td></tr></table></figure>
+
+<p>第三步：push</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker push YOUR_DOCKERHUB_NAME/firstimage</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">举例：docker push preparedman/mytomcat:1.0</span></span><br></pre></td></tr></table></figure>
+
+<p>Docker 测试</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">https</span>:<span class="comment">//cloud.docker.com/u/preparedman/repository/docker/preparedman/mytomcat</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://stackoverflow.com/questions/39508018/docker-driver-failed-programming-external-connectivity-on-endpoint-webserver">https://stackoverflow.com/que...</a></p>
+<p>[^push-dockerfile]: <a href="https://cloud.tencent.com/developer/article/1518323">【docker】创建Dockerfile并push到docker-hub</a> | <a href="https://web.archive.org/web/20221003161847/https://cloud.tencent.com/developer/article/1518323">@archive.org</a><br>[^docker-push-denied-csdn]: <a href="https://blog.csdn.net/Florine113/article/details/121748462">Docker发布镜像时报错denied: requested access to the resource is denied解决办法</a> | <a href="https://web.archive.org/web/20221003171220/https://blog.csdn.net/Florine113/article/details/121748462">@archive.org</a></p>
+<h1 id="GitHub-Action-自动构建项目容器镜像并-Push-到官方-Docker-Hub"><a href="#GitHub-Action-自动构建项目容器镜像并-Push-到官方-Docker-Hub" class="headerlink" title="GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub"></a><a href="https://senjianlu.com/2021/10/github-action-push-to-docker-hub/">GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub</a></h1><p><a href="https://web.archive.org/web/20220921171218/https://senjianlu.com/2021/10/github-action-push-to-docker-hub/">@archive.org</a></p>
+<p>TODO.</p>
+]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Synology</tag>
+        <tag>群晖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/09/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server </span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hexo 使用 Waline 评论系统（Hexo Next 主题版本(V8+)的那些事）</title>
     <url>/2022/10/2022-10-Hexo-Next-v8-versions-Waline/</url>
     <content><![CDATA[<p>Hexo Next 主题版本(V8+)的那些事（使用Waline评论系统踩的坑）。</p>
@@ -225,135 +352,6 @@
       </tags>
   </entry>
   <entry>
-    <title>支持在线可视化编辑的 Hexon（替代 Hexo-Admin）</title>
-    <url>/2022/10/2022-10-hexo-with-hexon-editor/</url>
-    <content><![CDATA[<p>支持在线可视化编辑的 Hexon（替代 hexo-admin）。  </p>
-<span id="more"></span>
-
-
-
-<h1 id="什么是-Hexon-？-laosu-hexon"><a href="#什么是-Hexon-？-laosu-hexon" class="headerlink" title="什么是 Hexon ？[^laosu-hexon]"></a>什么是 Hexon ？[^laosu-hexon]</h1><blockquote>
-<p><a href="https://github.com/gethexon/hexon"><code>Hexon</code></a> 是一款在线 <code>hexo</code> 博客编辑器，在 0.6 版本之前叫 <code>winwin-hexo-editor</code>。最新的 <code>Hexon</code> 源代码 v0.12.4（23 Jun 2022）。</p>
-</blockquote>
-<p><code>Hexon</code> 的界面 比 <code>hexo-admin</code> 好看多了，功能排布也更合理，先上一张图感受下 ：</p>
-<p><img src="/2022/10/2022-10-hexo-with-hexon-editor/20210422093136.png" alt="img"></p>
-<p>[^laosu-hexon]: <a href="https://laosu.ml/2021/05/10/%E6%94%AF%E6%8C%81%E5%9C%A8%E7%BA%BF%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E8%BE%91%E7%9A%84Hexon/">支持在线可视化编辑的Hexon–laosu.ml</a>  | <a href="https://web.archive.org/web/20221006200104/https://laosu.ml/2021/05/10/%E6%94%AF%E6%8C%81%E5%9C%A8%E7%BA%BF%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E8%BE%91%E7%9A%84Hexon/">@achive.org</a></p>
-<h1 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h1><blockquote>
-<p>切记！！！ <code>winwin-hexo-editor</code> 只是 <code>hexo</code> 博客的编辑器，所以在部署前需确保 <code>hexo</code> 博客可用。如果您还不知道怎么部署，请参考老苏的上一篇文章『 <a href="https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">在群晖上复刻公网的Hexo</a> 』</p>
-</blockquote>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>没有找到 <code>Hexon</code> 或者 <code>winwin-hexo-editor</code> 的镜像，所以这次我们准备自己来构建。</p>
-<p>如果你觉得自己构建麻烦，可以直接跳到方式二，下载老苏已经构建好的镜像。</p>
-<div class="tabs" id=""><ul class="nav-tabs"><li class="tab active"><a href="#-1">极简操作</a></li><li class="tab"><a href="#-2">详细配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="-1"><ol>
-<li><p>注册表搜索 <code>wbsu2003/docker-hexo-editor</code>  </p>
-<p>2022.09.24更新 ， v2 版构建构基于 <code>Hexon</code>；</p>
-</li>
-</ol>
-<p><img src="/image-20221009131559447.png" alt="image-20221009131559447"></p>
-<ol start="2">
-<li><p>创建容器</p>
-<blockquote>
-<p>其中 <code>/volume2/docker/hexo/blog</code> 是已经安装好的 <code>hexo</code> 的根目录，不了解的看看上一篇『 <a href="https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">在群晖上复刻公网的Hexo</a> 』</p>
-</blockquote>
-<p><img src="/image-20221009132321751.png" alt="image-20221009132321751"></p>
-<ul>
-<li><p>或者 命令行安装</p>
-<p>如果你熟悉命令行，可能用 docker cli 更快捷</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">新建文件夹 hexo 和 子目录</span></span><br><span class="line">mkdir -p /volume2/docker/hexo/blog</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入 hexo 目录</span></span><br><span class="line">cd /volume2/docker/hexo</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">运行容器</span></span><br><span class="line">docker run -d \</span><br><span class="line">   --name hexon \</span><br><span class="line">   -p 5888:5777 \</span><br><span class="line">   -e HEXO_EDIT_PORT=5888 \</span><br><span class="line">   -v $(pwd)/blog:/myblog \</span><br><span class="line">   wbsu2003/docker-hexo-editor:latest</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>Hexon 基础设置</p>
-<p>在访问之前，我们还要完成相关的设置，包括 Hexon 账号和密码等</p>
-<ul>
-<li><p>群晖 启动 容器 进行设置 。 （进入「终端机」进行设置。）</p>
-<p><img src="/image-20221009132917688.png" alt="image-20221009132917688"></p>
-</li>
-<li><p>命令行方式</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入容器</span></span><br><span class="line">docker exec --user root -it hexon /bin/bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入 server 目录</span></span><br><span class="line">cd  hexo-editor/server/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置</span></span><br><span class="line">pnpm run setup</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">退出容器</span></span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
-
-<p>   <img src="/202209241748148.png" alt="img"></p>
-</li>
-</ul>
-</li>
-<li><p>运行</p>
-<p>在浏览器中输入 <a href="http://diskstation:5888/">http://diskstation:5888</a> 就能看到登录界面</p>
-<p>用前面设置的账号密码登录</p>
-<p><img src="/202209241834504.png" alt="img"></p>
-</li>
-</ol></div><div class="tab-pane" id="-2"><p>自己构建。</p></div></div></div>]]></content>
-      <categories>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Hexon</tag>
-        <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>群晖通过 Dockerfile 构建</title>
-    <url>/2022/10/2022-synology-dockerfile-build/</url>
-    <content><![CDATA[<p>群晖通过 Dockerfile 构建。  </p>
-<span id="more"></span>
-
-
-
-<h1 id="群晖通过Dockerfile构建-Image-synology-dockerfile-csdn"><a href="#群晖通过Dockerfile构建-Image-synology-dockerfile-csdn" class="headerlink" title="群晖通过Dockerfile构建 Image[^synology-dockerfile-csdn]"></a>群晖通过Dockerfile构建 Image[^synology-dockerfile-csdn]</h1><p>然后通过ssh连接群晖，登录root用户</p>
-<p>cd到docker目录(cd &#x2F;docker)  —- Dockerfile 存放目录</p>
-<p>构建自己的docker镜像( <strong><code>sudo docker build -t tomcat-heardfate .</code></strong> )  <strong>&#x2F;&#x2F; 这里必须要用 sudo，要不然没有权限</strong>  ， 或者 <del><code>sudo su -  </code> 切换到 root 身份。</del> [^sudo-su-root-csdn]（不推荐）</p>
-<p>接着 ，去群晖的docker——&gt;映象 就会多出 tomcat-heardfate</p>
-<p><img src="/Center.jpeg" alt="群晖Docker"></p>
-<p>[^synology-dockerfile-csdn]: <a href="https://blog.csdn.net/heardy/article/details/73733731">群晖Docker通过Dockerfile构建镜像 部署Tomcat</a>  | <a href="https://web.archive.org/web/20221003160438/https://blog.csdn.net/heardy/article/details/73733731#">@archive.org</a><br>[^sudo-su-root-csdn]: <a href="https://web.archive.org/web/20221003170431/https://blog.csdn.net/weixin_34049032/article/details/89898671">使用sudo进入root权限，以及防止root密码被恶意篡改</a> | <a href="https://web.archive.org/web/20221003170431/https://blog.csdn.net/weixin_34049032/article/details/89898671">@archive.org</a></p>
-<h1 id="push-Dockerfile-到docker-hub-push-dockerfile"><a href="#push-Dockerfile-到docker-hub-push-dockerfile" class="headerlink" title="push Dockerfile 到docker-hub[^push-dockerfile]"></a>push Dockerfile 到docker-hub[^push-dockerfile]</h1><h2 id="根据-Dockerfile-build-并测试"><a href="#根据-Dockerfile-build-并测试" class="headerlink" title="根据 Dockerfile build 并测试"></a>根据 Dockerfile build 并测试</h2><p>The docker build command processes this file generating a Docker Image in your Local Image Cache, which you can then start-up using the docker run command, or push to a permanent Image Repository.</p>
-<p>docker build 创建一个docker镜像，这个镜像可以在你本地运行。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker build -t mytomcat:1.0 .  # 注意最后的 &#x27;.&#x27; ,代表当前目录（Dockerfile 所在的目录）。</span><br><span class="line">docker run -p 8080:8080 -d mytomcat:1.0</span><br><span class="line">curl localhost:8080</span><br></pre></td></tr></table></figure>
-
-<h2 id="push-到-docker-hub"><a href="#push-到-docker-hub" class="headerlink" title="push 到 docker hub"></a>push 到 docker hub</h2><p>第一步：命令行 docker 登录 。（ 不然 docker push 的时候会报 denied 错误。[^docker-push-denied-csdn]）</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Docker login</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">输入用户名、密码</span></span><br></pre></td></tr></table></figure>
-
-<p>第二步：修改 tag 名称</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">必须先修改 tag 名称</span></span><br><span class="line">docker tag firstimage YOUR_DOCKERHUB_NAME/firstimage</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">举例： docker tag mytomcat:1.0 preparedman/mytomcat:1.0</span></span><br></pre></td></tr></table></figure>
-
-<p>第三步：push</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker push YOUR_DOCKERHUB_NAME/firstimage</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">举例：docker push preparedman/mytomcat:1.0</span></span><br></pre></td></tr></table></figure>
-
-<p>Docker 测试</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">https</span>:<span class="comment">//cloud.docker.com/u/preparedman/repository/docker/preparedman/mytomcat</span></span><br></pre></td></tr></table></figure>
-
-<p><a href="https://stackoverflow.com/questions/39508018/docker-driver-failed-programming-external-connectivity-on-endpoint-webserver">https://stackoverflow.com/que...</a></p>
-<p>[^push-dockerfile]: <a href="https://cloud.tencent.com/developer/article/1518323">【docker】创建Dockerfile并push到docker-hub</a> | <a href="https://web.archive.org/web/20221003161847/https://cloud.tencent.com/developer/article/1518323">@archive.org</a><br>[^docker-push-denied-csdn]: <a href="https://blog.csdn.net/Florine113/article/details/121748462">Docker发布镜像时报错denied: requested access to the resource is denied解决办法</a> | <a href="https://web.archive.org/web/20221003171220/https://blog.csdn.net/Florine113/article/details/121748462">@archive.org</a></p>
-<h1 id="GitHub-Action-自动构建项目容器镜像并-Push-到官方-Docker-Hub"><a href="#GitHub-Action-自动构建项目容器镜像并-Push-到官方-Docker-Hub" class="headerlink" title="GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub"></a><a href="https://senjianlu.com/2021/10/github-action-push-to-docker-hub/">GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub</a></h1><p><a href="https://web.archive.org/web/20220921171218/https://senjianlu.com/2021/10/github-action-push-to-docker-hub/">@archive.org</a></p>
-<p>TODO.</p>
-]]></content>
-      <categories>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>Synology</tag>
-        <tag>群晖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/09/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server </span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Hexo Next 主题优化</title>
     <url>/2022/09/hexo-next-beauty/</url>
     <content><![CDATA[<p>Hexo Next 主题优化 。  </p>
@@ -426,7 +424,7 @@
 <h3 id="其他插件-laosu-hexo"><a href="#其他插件-laosu-hexo" class="headerlink" title="其他插件[^laosu-hexo]"></a>其他插件[^laosu-hexo]</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">百度推送插件</span></span><br><span class="line">npm install hexo-baidu-url-submit --save</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">hexo-generator-index2 插件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md</span></span><br><span class="line">npm install hexo-generator-index2 --save</span><br><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">symbols_count_time 插件</span></span><br><span class="line">npm install hexo-symbols-count-time --save</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">hexo-blog-encrypt 插件</span></span><br><span class="line">npm install hexo-blog-encrypt --save</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">hexo-deployer-git 插件</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Local Search</span></span><br><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line"></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在 Hexo 中无痛使用本地图片 https://hyf.js.org/blog/2017-06-01.no-pains-with-hexo-local-image/</span></span><br><span class="line"></span><br><span class="line">npm install hexo-asset-image-for-hexo5 --save		# https://github.com/uinika/hexo-asset-image-for-hexo5</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">npm install https://github.com/yafey/hexo-asset-image.git --save</span></span><br><span class="line">npm install hexo-asset-img --save     # https://github.com/yiyungent/hexo-asset-img    https://www.idealx.cn/post/Hexo/hexo-asset-image/</span><br><span class="line"><span class="meta prompt_">	# </span><span class="language-bash">npm install github:yafey/hexo-asset-image2<span class="comment">#main --save</span></span> </span><br><span class="line"><span class="meta prompt_">	# </span><span class="language-bash">npm i git+https://yafey:hyf4@github@github.com/yafey/hexo-asset-image2<span class="comment">#main --save</span></span></span><br><span class="line">	</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><a href="https://www.idealx.cn/post/Hexo/hexo-asset-image/">在Hexo中使用本地图片</a></p>
 <p>[^laosu-hexo]: <a href="https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">在群晖上复刻公网的Hexo-上海老苏</a> | <a href="https://web.archive.org/web/20220924210332/https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">@archive.org</a></p>
-<h2 id="入侵式修改"><a href="#入侵式修改" class="headerlink" title="入侵式修改"></a>入侵式修改</h2><h3 id="调整-博客宽度"><a href="#调整-博客宽度" class="headerlink" title="调整 博客宽度"></a>调整 博客宽度</h3><div class="tabs" id=""><ul class="nav-tabs"><li class="tab active"><a href="#-1">Next&gt;V8💕官方配置</a></li><li class="tab"><a href="#-2">过时的⚠️非官方配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="-1"><p><a href="https://theme-next.js.org/docs/advanced-settings/custom-files.html#How-to-Change-Content-Width">How to Change Content Width</a></p>
+<h2 id="入侵式修改"><a href="#入侵式修改" class="headerlink" title="入侵式修改"></a>入侵式修改</h2><h3 id="调整-博客宽度"><a href="#调整-博客宽度" class="headerlink" title="调整 博客宽度"></a>调整 博客宽度</h3><div class="tabs" id="调整博客宽度"><ul class="nav-tabs"><li class="tab active"><a href="#调整博客宽度-1">Next&gt;V8💕官方配置</a></li><li class="tab"><a href="#调整博客宽度-2">过时的⚠️非官方配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="调整博客宽度-1"><p><a href="https://theme-next.js.org/docs/advanced-settings/custom-files.html#How-to-Change-Content-Width">How to Change Content Width</a></p>
 <p>Default variables for both Muse and Mist schemes are defined as:</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">next/source/css/_variables/base<span class="selector-class">.styl</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$content</span>-desktop         = <span class="number">700px</span>  	<span class="comment">// screen width &lt; 1200px</span></span><br><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">800px</span>  	<span class="comment">// screen width &gt;= 1200px</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">900px</span>  	<span class="comment">// screen width &gt;= 1600px</span></span><br></pre></td></tr></table></figure>
 
@@ -434,7 +432,7 @@
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">hexo/source/_data/variables<span class="selector-class">.styl</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$content</span>-desktop         = <span class="number">90%</span></span><br><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">90%</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">90%</span></span><br></pre></td></tr></table></figure>
 
 <p>Then uncomment <code>variable</code> under the <code>custom_file_path</code> section in NexT config file.</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">NexT</span> <span class="string">config</span> <span class="string">file</span></span><br><span class="line"></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">variable:</span> <span class="string">source/_data/variables.styl</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="-2"><p><a href="https://www.jianshu.com/p/71ac0bdfdaba">Hexo next自适应宽屏</a></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">NexT</span> <span class="string">config</span> <span class="string">file</span></span><br><span class="line"></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">variable:</span> <span class="string">source/_data/variables.styl</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="调整博客宽度-2"><p><a href="https://www.jianshu.com/p/71ac0bdfdaba">Hexo next自适应宽屏</a></p>
 <blockquote>
 <p>效果见 <a href="https://zengwu.com.cn/">https://zengwu.com.cn</a></p>
 </blockquote>

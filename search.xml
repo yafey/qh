@@ -243,7 +243,8 @@
 </blockquote>
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>没有找到 <code>Hexon</code> 或者 <code>winwin-hexo-editor</code> 的镜像，所以这次我们准备自己来构建。</p>
 <p>如果你觉得自己构建麻烦，可以直接跳到方式二，下载老苏已经构建好的镜像。</p>
-<p><img src="/2022/10/2022-10-hexo-with-hexon-editor/image-20221009132321751.png" alt="image-20221009132321751"></p>
+<img src="./image-20221009132321751.png" alt="image-20221009132321751" style="zoom:80%;" />
+
 <div class="tabs" id="构建镜像"><ul class="nav-tabs"><li class="tab active"><a href="#构建镜像-1">极简操作</a></li><li class="tab"><a href="#构建镜像-2">详细配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="构建镜像-1"><ol>
 <li><p>注册表搜索 <code>wbsu2003/docker-hexo-editor</code>  </p>
 <p>2022.09.24更新 ， v2 版构建构基于 <code>Hexon</code>；</p>
@@ -253,7 +254,8 @@
 <blockquote>
 <p>其中 <code>/volume2/docker/hexo/blog</code> 是已经安装好的 <code>hexo</code> 的根目录，不了解的看看上一篇『 <a href="https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">在群晖上复刻公网的Hexo</a> 』</p>
 </blockquote>
-<p><img src="/./image-20221009132321751.png" alt="image-20221009132321751"></p>
+<img src="./image-20221009132321751.png" alt="image-20221009132321751" style="zoom:100%;" />
+
 <ul>
 <li><p>或者 命令行安装</p>
 <p>如果你熟悉命令行，可能用 docker cli 更快捷</p>

@@ -243,7 +243,43 @@
 </blockquote>
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>没有找到 <code>Hexon</code> 或者 <code>winwin-hexo-editor</code> 的镜像，所以这次我们准备自己来构建。</p>
 <p>如果你觉得自己构建麻烦，可以直接跳到方式二，下载老苏已经构建好的镜像。</p>
-<div class="tabs" id=""><ul class="nav-tabs"><li class="tab active"><a href="#-1">极简操作</a></li><li class="tab"><a href="#-2">详细配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="-1"></div><div class="tab-pane" id="-2"></div></div></div>]]></content>
+<div class="tabs" id=""><ul class="nav-tabs"><li class="tab active"><a href="#-1">极简操作</a></li><li class="tab"><a href="#-2">详细配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="-1"><ol>
+<li><p>注册表搜索 <code>wbsu2003/docker-hexo-editor</code>  </p>
+<p>2022.09.24更新 ， v2 版构建构基于 <code>Hexon</code>；</p>
+</li>
+</ol>
+<p><img src="/image-20221009131559447.png" alt="image-20221009131559447"></p>
+<ol start="2">
+<li><p>创建容器</p>
+<blockquote>
+<p>其中 <code>/volume2/docker/hexo/blog</code> 是已经安装好的 <code>hexo</code> 的根目录，不了解的看看上一篇『 <a href="https://laosu.ml/2021/05/07/%E5%9C%A8%E7%BE%A4%E6%99%96%E4%B8%8A%E5%A4%8D%E5%88%BB%E5%85%AC%E7%BD%91%E7%9A%84Hexo/">在群晖上复刻公网的Hexo</a> 』</p>
+</blockquote>
+<p><img src="/image-20221009132321751.png" alt="image-20221009132321751"></p>
+<ul>
+<li><p>或者 命令行安装</p>
+<p>如果你熟悉命令行，可能用 docker cli 更快捷</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">新建文件夹 hexo 和 子目录</span></span><br><span class="line">mkdir -p /volume2/docker/hexo/blog</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入 hexo 目录</span></span><br><span class="line">cd /volume2/docker/hexo</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">运行容器</span></span><br><span class="line">docker run -d \</span><br><span class="line">   --name hexon \</span><br><span class="line">   -p 5888:5777 \</span><br><span class="line">   -e HEXO_EDIT_PORT=5888 \</span><br><span class="line">   -v $(pwd)/blog:/myblog \</span><br><span class="line">   wbsu2003/docker-hexo-editor:latest</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Hexon 基础设置</p>
+<p>在访问之前，我们还要完成相关的设置，包括 Hexon 账号和密码等</p>
+<ul>
+<li><p>群晖 启动 容器 进行设置 。 （进入「终端机」进行设置。）</p>
+<p><img src="/image-20221009132917688.png" alt="image-20221009132917688"></p>
+</li>
+<li><p>命令行方式</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入容器</span></span><br><span class="line">docker exec --user root -it hexon /bin/bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入 server 目录</span></span><br><span class="line">cd  hexo-editor/server/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置</span></span><br><span class="line">pnpm run setup</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">退出容器</span></span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<p>   <img src="/202209241748148.png" alt="img"></p>
+</li>
+</ul>
+</li>
+<li><p>运行</p>
+<p>在浏览器中输入 <a href="http://diskstation:5888/">http://diskstation:5888</a> 就能看到登录界面</p>
+<p>用前面设置的账号密码登录</p>
+<p><img src="/202209241834504.png" alt="img"></p>
+</li>
+</ol></div><div class="tab-pane" id="-2"><p>自己构建。</p></div></div></div>]]></content>
       <categories>
         <category>Docker</category>
       </categories>
